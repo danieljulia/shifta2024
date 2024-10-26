@@ -1,2 +1,3 @@
 #ignorar archivos .pdf, los documentos estan en .md
 *.pdf
+node_modules/
