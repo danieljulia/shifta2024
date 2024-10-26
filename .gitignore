@@ -1,3 +1,7 @@
 #ignorar archivos .pdf, los documentos estan en .md
 *.pdf
 node_modules/
+
+#para generar los pdfs ejecutar 
+# node tools/convert_to_pdf.js 
+
