@@ -104,6 +104,16 @@ Ejemplo
 npx cowsay "Hello, I'm a cow"
 
 
+Ejemplo
+
+Convertir md a pdf 
+
+
+```
+npm install -g markdown-pdf
+markdown-pdf yourfile.md
+```
+
 ## Parcel
 
 Parcel es un empaquetador de aplicaciones 

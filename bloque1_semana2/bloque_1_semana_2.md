@@ -14,9 +14,9 @@ Existen versiones más avanzadas del terminal "por defecto" en el sistema operat
 
 ###  Introducción a Git: conceptos básicos, instalación y configuración
 
-Git es un sistema de versiones que funciona sobretodo en el terminal, aunque también hay aplicaciones gráficas.
+Git es un sistema de control de versiones que funciona sobretodo en el terminal, aunque también hay aplicaciones gráficas.
 
-Git es un sistema de control de versiones distribuido que se utiliza para rastrear y gestionar los cambios en el código fuente de un proyecto. Fue creado por Linus Torvalds en 2005 para gestionar el desarrollo del kernel de Linux, y desde entonces se ha convertido en la herramienta estándar para gestionar proyectos de software.
+Git se utiliza para rastrear y gestionar los cambios en el código fuente de un proyecto. Fue creado por Linus Torvalds en 2005 para gestionar el desarrollo del kernel de Linux, y desde entonces se ha convertido en la herramienta estándar para gestionar proyectos de software.
 
 Instalación de git 
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
@@ -79,46 +79,47 @@ https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a
 
 ### Creando nuestro repositorio y publicando contenido
 
-Podemos crear un repositorio nuevo en Github
-Una vez creado con un nombre en la web, creamos un directorio en nuestro ordenador y empezar a generar archivos para el repositorio
+Podemos crear un repositorio nuevo en Github y vincularlo con un directorio local en nuestro ordenador, partiendo de cero o con archivos que ya existen.
 
 (instrucciones del web de github)
 
+En el caso que partamos de cero, nos situamos en un directorio y ejecutamos los siguientes comandos 
 ```
 echo "# shifta2024" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin git@github.com:danieljulia/shifta2024.git
+git remote add origin git@github.com:nombreusuario@nombrerepositorio.git
 git push -u origin main
 ````
+(teniendo en cuenta que después de origin va el nombre de usuario y el nombre del repositorio que hemos creado)
 
-O si los archivos ya existian 
+O si los archivos ya existian y queremos convertirlo en un repositorio
 ```
-git remote add origin git@github.com:danieljulia/shifta2024.git
+git remote add origin git@github.com:nombreusuario@nombrerepositorio.git
 git branch -M main
 git push -u origin main
 ````
 
-- Introducción a Git: conceptos básicos, instalación y configuración
-- Comandos esenciales:
-  - `init`
-  - `add`
-  - `commit`
-  - `push`
-  - `pull`
-  - `clone`
+- Comandos esenciales de git:
+  * `init`
+  * `add`
+  * `commit`
+  * `push`
+  * `pull`
+  * `clone`
   
 - Branching y merging:
   - Crear ramas
+    git branch nombre_rama
   - Cambiar entre ramas
+    git checkout nombre_rama
+  - las dos cosas 
+    git checkout -b nombre_rana 
   - Fusionar ramas
+    git merge nombre_rama
 - Resolución de conflictos
-- Uso de GitHub:
-  - Creación de repositorios
-  - Fork
-  - Pull requests
 - Colaboración en equipo mediante GitHub
 - Alternativas a Github, Gitlab, Bitbucket, Sourceforge, etc
 
@@ -128,9 +129,17 @@ Este curso está publicado en github.
 https://github.com/danieljulia/shifta2024
 
 
+> Git cheat sheet 
+https://education.github.com/git-cheat-sheet-education.pdf
+
+> Un resumen de las operaciones más importantes con git y lista de recursos para ampliar al final
+https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
+
+
 ## 2. Entorno/Herramientas de desarrollo: localhost, inspector del navegador
 
 ### Configuración de localhost
+
 - MAMP
 https://www.mamp.info/en/mac/
 - XAMPP
@@ -145,18 +154,32 @@ https://www.youtube.com/watch?v=L4f1XHrSJEg
 
 
 ### Editores de código (IDE)
-- Comparativa entre:
+
+
+- Existen muchas opciones
   - Visual Studio Code
   - Sublime Text
   - WebStorm
-- Instalación y configuración básica
-- Extensiones útiles para desarrollo web
 
-
+Vamos a usar Visual Studio Code (VSC)
+VSC es de propiedad de Microsoft, igual que github.
 Descargar Visual Studio Code
 https://code.visualstudio.com/download
 
+Ventajas de VSC (y otros editores)
+
+- Se puede personalizar totalmente el aspecto
+- Posibilidad de instalar extensiones para cualquier funcionalidad
+- Compatible con muchos lenguajes de programación 
+- Autocompletado inteligente 
+- Control de versiones (git) integrado 
+- Es ligero y rápido de ejecutar 
+- Tiene la terminal integrada 
+- Multiplataforma 
+- Gratuito y de código abierto 
+
 ### Inspector del navegador
+
 - Herramientas de desarrollador en Chrome, Firefox, y Safari
 - Pestañas del inspector
 - Depuración de HTML, CSS y JavaScript
@@ -165,6 +188,11 @@ https://code.visualstudio.com/download
 Video recomendado, Overview de las chrome dev tools
 https://developer.chrome.com/docs/devtools/overview
 
+Video. Las 15 mejores extensiones para VSC
+https://www.youtube.com/watch?v=lv88bCi7eyg
+
+Atajos de teclado en VSC
+https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 
 ## 4. Principios básicos de accesibilidad y web semántica, SEO, desde el punto de vista de la programación
 
@@ -225,6 +253,7 @@ https://www.youtube.com/watch?v=wY8hC5wCNIE
 
 
 ### Web semántica
+
 Se refiere al uso apropiado de etiquetas HTML5 de manera que se pueda entender su función dentro de todo el documento.
 Es posible construir un web entero usando solo etiquetas ```<div>``` pero una web semántica debe usar etiquetas con sentido como ``` header, nav, main, article, section, aside, footer, figure,``` etc 
 Usar HTML semántico mejora la accesibilidad, facilita la indexación por motores de búsqueda y da una estructura más lógica al contenido de una página.
@@ -238,11 +267,18 @@ El SEO (Search Engine Optimization) es el conjunto de estrategias y técnicas qu
 Existen 4 aspectos a tratar para conseguir un buen posicionamiento
 
 1 - A nivel técnico etiquetar correctamente el html con encabezados, títulos explicativos, urls claras y descriptivas, etiquetas meta y en general HTML semántico.
-2 - Un contenido de calidad siempre será más relevante para los buscadores 
+
+2- Un contenido de calidad siempre será más relevante para los buscadores 
+
+
 3 - A nivel técnico que la web se cargue rápido y las imágenes estén optimizadas, que el diseño responsive funcione bien, beneficia también al SEO
+
 4 - Finalmente es bueno aumentar la reputación del sitio consiguiendo menciones de calidad (links) en otros sitios web
 
-Un sitemap (un document xml que describa la estructura de la web) también es bueno para posicionar nuestra web. 
+Un sitemap (un documento xml que describa la estructura de la web) también es bueno para posicionar nuestra web. 
+
+> Más información. Guia SEO de google
+https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es
 
 ### Herramientas 
 
@@ -260,18 +296,40 @@ https://www.seoptimer.com/
 
 ### Introducción a la IA en el desarrollo de software
 
+
+La inteligencia artificial en el desarrollo de software hace que el proceso sea mucho más ágil y eficiente. Ayuda a los desarrolladores generando fragmentos de código automáticamente y hasta automatizando pruebas, así que se pierde menos tiempo en tareas repetitivas. También es genial para optimizar el rendimiento de las aplicaciones, sugiriendo cambios que hacen que el software sea más rápido y use menos recursos.
+
+Herramientas de IA como GitHub Copilot o ChatGPT  funcionan como “compañeros de equipo” virtuales, ayudando a los desarrolladores a resolver dudas o sugiriendo mejoras al código.
+
 ### GitHub Copilot
+
+
+Existe una versión de educación de Github copilot para estudiantes 
+https://education.github.com/discount_requests/application?type=student
+También existe una versión de prueba de 30 dias 
+
 - Instalación y configuración
-- Uso básico y avanzado
-- Mejores prácticas y consideraciones éticas
+
+https://code.visualstudio.com/docs/copilot/setup
+
+- Video introducción a github copilot 
+https://www.youtube.com/watch?v=2q0BoioYSxQ
+
 
 ### Otras herramientas de IA para programación
-- Chatgpt, Claude
+
+- Chatgpt
+https://chatgpt.com/
+- Claude
+https://claude.ai/new
+- Google Gemini 
+https://gemini.google.com/
+- NotebookLM 
+https://notebooklm.google/
+
 
 ### Límites y potencial de la IA en la generación de código
+ 
+La IA todavía comete errores en lógica compleja o cuando las instrucciones son ambiguas. Además, tiende a reproducir patrones comunes y podría no ofrecer soluciones novedosas para problemas específicos. Aun así, combinada con supervisión humana, es una herramienta poderosa que puede mejorar la productividad y creatividad en el desarrollo
 
 
-
-## Tarea 
-
-Preparar entorno de desarrollo (MAMP, …) + Git/GitHub
