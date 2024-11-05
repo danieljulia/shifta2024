@@ -2,6 +2,14 @@
 
 # Bloque 1. Semana 2. Herramientas avanzadas
 
+Índice
+
+1. Control de versiones: Git / Github 
+2. Entorno/Herramientas de desarrollo: localhost
+3. Editores de código (IDE), inspector del navegador
+4. Principios básicos de accesibilidad y web semántica, SEO, desde el punto de vista de la programación
+5. IA para la generación de código / GitHub Copilot
+
 ## 1. Control de versiones: Git / GitHub
 
 
@@ -50,7 +58,7 @@ Vamos a clonar el repositorio con el material del curso
 Nos situamos en algún directorio en nuestro ordenador usando el terminal y escribimos la siguiente instrucción
 
 ```
-git clone https://github.com/danieljulia/shifta2024.git
+git clone git@github.com:danieljulia/shifta2024.git
 ```
 Esto ejemplo clona  el repositorio que está en https://github.com/danieljulia/shifta2024
 
@@ -59,8 +67,9 @@ De la misma manera podemos clonar cualquier repositorio publico.
 Una vez clonada verificamos que tenemos los archivos del repositorio.
 Entonces podemos empezar a trabajar y hacer cosas como
 
-- Añadir ficheros al "staging" con git add <nombre archivo>
-- Hacer un commit de los cambios, añadir los cambios al repositorio con git commit -m 'un comentario'
++ Añadir ficheros al "staging" con git add <nombre archivo>
++ Hacer un commit de los cambios, añadir los cambios al repositorio con 
+git commit -m 'un comentario'
 
 También podriamos dsubir los cambios al repositorio remoto con git push, pero para ello debemos registrar una clave en la configuración de github.
 
@@ -135,8 +144,10 @@ https://education.github.com/git-cheat-sheet-education.pdf
 > Un resumen de las operaciones más importantes con git y lista de recursos para ampliar al final
 https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners
 
+> Video: Learn git in 15 minutes 
+https://www.youtube.com/watch?v=USjZcfj8yxE&t=164s
 
-## 2. Entorno/Herramientas de desarrollo: localhost, inspector del navegador
+## 2. Entorno/Herramientas de desarrollo: localhost
 
 ### Configuración de localhost
 
@@ -149,6 +160,10 @@ Apache está incluido en el sistema en ordenadores Mac y Linux.
 WSL en Windows
 https://www.youtube.com/watch?v=L4f1XHrSJEg
 
+Otros posibles entornos de desarrollo
+- Maquinas virtuales
+- Docker (gestor de contenedores)
+- Entorno de desarrollo en un servidor remoto
 
 ## 3. Editores de código (IDE), inspector del navegador
 
@@ -185,13 +200,13 @@ Ventajas de VSC (y otros editores)
 - Depuración de HTML, CSS y JavaScript
 - Análisis de rendimiento y red
 
-Video recomendado, Overview de las chrome dev tools
+> Video recomendado, Overview de las chrome dev tools
 https://developer.chrome.com/docs/devtools/overview
 
-Video. Las 15 mejores extensiones para VSC
+> Video. Las 15 mejores extensiones para VSC
 https://www.youtube.com/watch?v=lv88bCi7eyg
 
-Atajos de teclado en VSC
+> Atajos de teclado en VSC
 https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf
 
 ## 4. Principios básicos de accesibilidad y web semántica, SEO, desde el punto de vista de la programación
@@ -289,6 +304,7 @@ https://developers.google.com/analytics?hl=es
 - Seoptimer (herramienta para auditar webs)
 https://www.seoptimer.com/
 
+- Otras herramientas
 
 
 
