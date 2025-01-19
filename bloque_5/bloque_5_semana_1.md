@@ -12,12 +12,15 @@
 
 ## Node.js y npm
 
-- Conceptos básicos de Node.js
 
 Node.js es un entorno de ejecución de JavaScript del lado del servidor. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo en el servidor web o directamente en el terminal de nuestro pc.
 Esto lo convierte en un lenguaje de programación muy potente, permitiendo crear aplicaciones usando solo javascript (tanto en el servidor como en el cliente)
 
 Una vez instalado lo ejecutamos desde el terminal con la instrucción "node"
+
+Instalación de node:
+https://nodejs.org/en/download
+
 
 La instrucción para saber la versión es: 
 
@@ -26,7 +29,7 @@ node -v
 ```
 (nos devolverá por ejemplo v20.7.0)
 
-Podemos ejecutar un archivo en javascript de la siguiente manera 
+Una vez instalado podemos ejecutar un archivo en javascript de la siguiente manera 
 
 ```
 node ejemplo.js 
@@ -36,7 +39,7 @@ El código en ejemplo.js puede ser para empezar
 
 ```
 console.log("Hola Mundo")
-````
+```
 
 A diferencia del javascript que podemos usar en los navegadores node permite cargar "módulos" con opciones más avanzadas que normalmente no existen en el javascript del navegador. Por ejemplo el módulo fs nos permite realizar opciones con archivos (leer o escribir)
 En el siguiente ejemplo vemos como el código lee un archivo externo (ejemplo.txt) y lo muestra en la consola. 
@@ -50,11 +53,22 @@ fs.readFile('ejemplo.txt', 'utf8', (err, data) => {
     if (err) throw err;
     console.log(data);
 });
-````
+```
 
 Hay que remarcar el carácter asíncrono de node, es decir las lineas de código no se ejecutan necesariamente en orden lineal sino que cuando hay una petición asíncrona (como en el ejemplo al leer el archivo) esta parte de código se espera hasta haberla realizado.
 Existen muchos módulos pensados para poder implementar aplicaciones complejas como http, path, os, etc
 
+
+### nvm y nvm-windows
+
+Existen herramientas para poder manejar varias versiones de node simultaneamente.
+Una de ellas es nvm
+
+````
+nvm install 16.14.0     # Instala versión específica
+nvm use 16.14.0        # Cambia a versión
+nvm list              # Muestra versiones instaladas
+````
 
 
 ### El gestor de paquetes npm 
@@ -68,9 +82,9 @@ Recursos
   - [Documentación oficial de npm](https://docs.npmjs.com/)
   - [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
 
+Los paquetes instalados se gestionan automáticamente en un archivo llamado packages.json 
 
 ### 2 Maneras de cargar nódulos 
-
 
 
 MJS (Módulos ES)
@@ -83,10 +97,33 @@ Usando require() y module.exports
 Es la manera "antigua"
 Se entiende que se usa este modo cuando la extensión es .cjs
 
+Para instalar un package
+
+```
+npm install cowsay 
+```
+
+o
+
+```
+npm i cowsay 
+```
+
+para instalar globalmente (si lo queremos usar en multiples proyectos)
+```
+npm i -g cowsay 
+```
+
+Para crear el archivo packages.json 
+
+```
+npm init 
+```
+
 ### Otros ejemplos con npm
 
-- Ejemplo con ascii art 
-- Ejemplo con axios 
+- Ejemplo con ascii art (dibuja con carácteres de texto)
+- Ejemplo con axios (busca en la wikipedia)
 
 
 ### Gestión de dependencias con npm
@@ -95,28 +132,32 @@ Se entiende que se usa este modo cuando la extensión es .cjs
   - [Guía de package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
 - Dependencias
 
+Siempre que queramos actualizar las librerias simplemente hacemos 
+
+```
+npm update
+```
+
+
 ### npx 
 
 Npx ejecuta paquetes de npm sin necesidad de instalarlos
 
-Ejemplo 
+Ejemplo (lo podemos ejecutar en cualquier ruta de nuestro pc)
 
+```
 npx cowsay "Hello, I'm a cow"
-
-
-Ejemplo
-
-Convertir md a pdf 
-
-
 ```
-npm install -g markdown-pdf
-markdown-pdf yourfile.md
-```
+
+Otro ejemplo que tenemos en este repositorio usa npx y una libreria para convertir los archivos md a formato pdf
+Lo podéis encontrar en el directorio "tools"
+
+
 
 ## Parcel
 
 Parcel es un empaquetador de aplicaciones 
+
 - Introducción a Parcel
   - [Documentación oficial de Parcel](https://parceljs.org/docs/)
 - Configuración básica y avanzada
@@ -125,13 +166,44 @@ Parcel es un empaquetador de aplicaciones
 Para instalar parcel 
 
 ```
-npm install --save-dev parcel
+npm install -g  parcel
 ```
 
-Luego en package.json podemos editar esta linea 
+Una vez instalado podemos ejecutar los siguientes comandos 
+
 ```
-"start" : "parcel src/index.html"
-````
+parcel index.html	Run a development server.
+parcel build index.html	Bundle and optimize for production.
+parcel watch index.html	Watch files and rebuild when changes are detected.
+```
+
+Build genera todo el código compilado en /dist 
+Watch compila y muestra los cambios a la vez
+
+En package.json podemos añadir scripts
+
+{
+  "name": "ejemplo_parcel",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "source": "index.html",
+ "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9"
+  }
+}
+
+Que se ejecutan por ejemplo así
+
+```
+npm run start
+```
 
 De esta manera parcel generará el código "compilado" en /dist
 

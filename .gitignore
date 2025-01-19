@@ -5,3 +5,5 @@ node_modules/
 #para generar los pdfs ejecutar 
 # node tools/convert_to_pdf.js 
 
+
+.codegpt

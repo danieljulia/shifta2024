@@ -11,9 +11,22 @@
 
 ## Ventajas respecto javascript puro
 
-Explicar entornos en general, react, angular vue 
-Un ejemplo muy sencillo en vue 
-Explicar ventajas
+La inversión en el estudio de este tipo de frameworks vale la pena, ya que una vez aprendidos la programación de aplicaiones en javascript se vuelve mucho más sencilla y ágil.
+Básicamente existen 3 frameworks
+- React
+- Angular
+- Vue.js
+Enseñaremos aquí Vue porqué es el más sencillo y una vez conoces este es mucho más fácil aprender el resto.
+
+Entre las ventajas más importantes podemos encontrar:
+- Solo se renderiza lo necesario de manera que mejora mucho el rendimiento de las aplicaciones
+- Permiten dividir la interfaz en componentes reutilizables y mantenibles
+- Facilita el desarrollo en equipo al poder trabajar en componentes diferentes
+- Promueve la reutilización de código
+- Gran cantidad de librerías y componentes disponibles
+- Estructura más organizada y predecible
+- Código más limpio y modular
+
 
 ## Instalación y configuración
 
