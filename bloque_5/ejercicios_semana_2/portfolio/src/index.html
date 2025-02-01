@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+   
+</head>
+<body>
+    <div id="app">
+
+   
+    <header>
+        <h1>Artist Name</h1>
+        <p>Creative Works & Portfolio</p>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <div id="menu" class="menu">
+            <a href="#bio">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    
+
+
+    <section id="bio" class="bio">
+        <h2>About the Artist</h2>
+        <p>Brief biography and artistic statement.</p>
+    </section>
+    
+    <section v-if="portfolio" id="gallery" class="gallery">
+
+  
+            <a v-for="project in portfolio.projects" :key="project.id" :href="project.link">
+                <img :src="project.image" :alt="project.name">
+                <p>{{ project.name }}</p>
+            </a>
+           
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: artist@example.com</p>
+        <p>Social Media Links</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Artist Name. All rights reserved.</p>
+    </footer>
+
+ 
+    <script type="module" src="app.js"></script>
+
+</div>
+</body>
+</html>
