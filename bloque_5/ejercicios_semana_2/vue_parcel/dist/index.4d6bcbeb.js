@@ -9931,16 +9931,16 @@ let initialize = ()=>{
     script.render = require("8a4954974a3e2a08").render;
     script.__cssModules = require("f5f81ab60053088e").default;
     require("7e9898e9b122e745").default(script);
-    script.__scopeId = 'data-v-c418e8';
-    script.__file = "/Users/dani/projects/shifta2024/bloque_5/ejercicios_semana_2/vue_simple/src/App.vue";
+    script.__scopeId = 'data-v-891082';
+    script.__file = "/Users/dani/projects/shifta2024/bloque_5/ejercicios_semana_2/vue_parcel/src/App.vue";
 };
 initialize();
 if (module.hot) {
-    script.__hmrId = 'c418e8-hmr';
+    script.__hmrId = '891082-hmr';
     module.hot.accept(()=>{
         setTimeout(()=>{
             initialize();
-            if (!__VUE_HMR_RUNTIME__.createRecord('c418e8-hmr', script)) __VUE_HMR_RUNTIME__.reload('c418e8-hmr', script);
+            if (!__VUE_HMR_RUNTIME__.createRecord('891082-hmr', script)) __VUE_HMR_RUNTIME__.reload('891082-hmr', script);
         }, 0);
     });
 }
@@ -10056,7 +10056,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ]);
 }
 if (module.hot) module.hot.accept(()=>{
-    __VUE_HMR_RUNTIME__.rerender('c418e8-hmr', render);
+    __VUE_HMR_RUNTIME__.rerender('891082-hmr', render);
 });
 
 },{"vue":"gzxs9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1aWWh":[function() {},{}],"h0MjM":[function(require,module,exports,__globalThis) {

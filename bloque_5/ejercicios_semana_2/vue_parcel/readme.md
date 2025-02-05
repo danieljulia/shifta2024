@@ -1,0 +1,4 @@
+
+parcel
+o
+npm start

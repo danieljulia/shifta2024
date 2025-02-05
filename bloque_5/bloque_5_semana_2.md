@@ -52,23 +52,31 @@ También se puede instalar con npm
 https://es.vuejs.org/v2/guide/installation
 
 
-Más ejemplos 
-
 
 ## Ejemplos básico
 
-> explicar
+En /vue_sencillo tenemos un ejemplo que usa la librearia de vue en cdn
+No es necesario compilarla y funciona directamente 
 
 ## Ejemplo con parcel
 
-> explicar
+En vue_parcel tenemos una plantilla montada para funcionar con parcel.
+Se debe de compilar y el resultado se guarda en dist 
+Podemos ver los cambios en tiempo real
+
+## Ejemplo de portfolio con vue 
+
+En este ejemplo vemos una plantilla de un portfolio sencillo que se alimenta de un archivo json con los contenidos
+
 
 ## Componentes 
 
 > ejemplo basico 
 > convertir todo list en componentes
+> convertir portfolio a componentes
 
 ## Rutas 
+
 ## crear aplicacion usando linea de comandos 
 vue create my-router-project
 
