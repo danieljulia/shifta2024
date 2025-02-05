@@ -82,15 +82,21 @@ Recursos
   - [Documentación oficial de npm](https://docs.npmjs.com/)
   - [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
 
-Los paquetes instalados se gestionan automáticamente en un archivo llamado packages.json 
+Los paquetes instalados se pueden gestionar automáticamente en un archivo llamado packages.json 
+Con este comando se crea este archivo
+
+````
+npm init 
+````
 
 ### 2 Maneras de cargar nódulos 
 
+Existen dos maneras diferentes (e incompatibles)
 
 MJS (Módulos ES)
 Usando import y export 
 Es la manera "moderna"
-En package.json debemos tener "type":"module" o la extensión ser .mjs
+En package.json debemos tener "type":"module" o la extensión debe ser .mjs
 
 CJS (CommonJS):
 Usando require() y module.exports
@@ -110,8 +116,16 @@ npm i cowsay
 ```
 
 para instalar globalmente (si lo queremos usar en multiples proyectos)
+
 ```
 npm i -g cowsay 
+```
+
+Los packages se copian en la carpeta node_modules
+Si se instalan globalmente en una carpeta del sistema que podemos saber con este comando
+
+```
+npm root -g
 ```
 
 Para crear el archivo packages.json 
@@ -124,7 +138,8 @@ npm init
 
 - Ejemplo con ascii art (dibuja con carácteres de texto)
 - Ejemplo con axios (busca en la wikipedia)
-
+- Ejemplo con chalk
+- Ejemplo cowsay
 
 ### Gestión de dependencias con npm
 
@@ -177,10 +192,12 @@ parcel build index.html	Bundle and optimize for production.
 parcel watch index.html	Watch files and rebuild when changes are detected.
 ```
 
+Cuidado! no sirve para ejecutar js sino para publicar webs en html/css/js
+
 Build genera todo el código compilado en /dist 
 Watch compila y muestra los cambios a la vez
 
-En package.json podemos añadir scripts
+En package.json podemos añadir scripts para gestionar parcel
 
 {
   "name": "ejemplo_parcel",
@@ -206,6 +223,14 @@ npm run start
 ```
 
 De esta manera parcel generará el código "compilado" en /dist
+
+
+## Ejercicios propuestos
+
+
+- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O un generador de ascii_art o cowsay interactivo a partir de un formulario
+
+- Utilizando la plantilla de un portfolio (html/css) crear una aplicación que lee los datos desde un archivo json.
 
 
 ## Recursos
