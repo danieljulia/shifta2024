@@ -1,6 +1,7 @@
-# Bloque 5. Semana 4. Gestión y Despliegue de Aplicaciones Web: Netlify, Git y Métricas de Uso
+# Semana 4. Gestión y Despliegue de Aplicaciones Web: Netlify, Git y Métricas de Uso
 
 Índice 
+
 - Gestión de servidores web
 - Publicar usando Netlify 
 - Integración con git
@@ -9,6 +10,25 @@
 
 
 ## Gestión de servidores web
+
+Puede ser infraestructura física (on-premise) o en la nube (cloud computing)  
+Sistemas operativos más común: Linux 
+Almacenamiento
+Bases de datos 
+Backups automáticos
+Gestión de dominios  
+Acceso por ftp/sftp/ssh  
+Implementación de certificados SSL/TLS  
+Control de accesos y autenticación  
+Implementación de caché  
+
+Algunas opciones gratuitas 
+
+https://www.heroku.com/  
+https://vercel.com/  
+https://railway.com/
+https://www.netlify.com/
+
 
 ## Publicar usando Netlify 
 
@@ -31,15 +51,52 @@ Un ejemplo de pasos a seguir
 https://app.netlify.com/start
 En este momento nos pedirá autenticarnos y podremos ver todos los proyectos que tenemos en github
 - Configuramos si queremos alguna de las opciones y ya podemos hacer deploy
-- La ventaja ahora es que simplemente haciendo push en nuestro entorno local se publicará automaticamente la web en la dirección pública.
+- La ventaja ahora es que simplemente haciendo push en nuestro entorno local se publicará automáticamente la web en la dirección pública.
 
-(falta)
 
-## Integración con git
+## Publicación con github
 
 Git pages 
+Solo está pensado para páginas html estáticas
 
 ## Despliegue continuo
 
+Esta metodologia está pensado para funcionar junto con metodologias ágiles
+
+- Método de trabajo flexible sin un calendario preestablecido
+- Divide proyectos en partes pequeñas
+- Permite cambios rápidos
+- Enfocado en satisfacer al cliente
+
+
+El despliegue Continuo consiste en
+
+- Automatización de lanzamiento de software
+- Tests automáticos del código
+- Actualización directa cuando todo funciona
+- Reduce errores humanos
+- Acelera la entrega de mejoras
+
+Permite subir cambios a la web de forma inmediata y segura
+
+Ambos se basan en la mejora constante, la flexibilidad y que están centrados en los resultados
 
 ## Métricas de uso
+
+Métricas de Rendimiento
+
+- Tiempo de carga inicial
+- Tiempo de renderizado
+- etc
+
+Podemos usar 
+
+- Chrome DevTools
+- Lighthouse (pagespeed, google)
+
+Herramientas de Medición
+
+- Google Analytics
+- Firebase Analytics
+
+

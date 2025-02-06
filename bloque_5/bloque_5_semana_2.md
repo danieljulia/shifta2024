@@ -1,24 +1,27 @@
-# Bloque 5. Semana 2. Frameworks FrontEnd: Ventajas, Instalación, Comparación y Ejemplos con Vue.js
+# Semana 2. Frameworks FrontEnd: Ventajas, Instalación, Comparación y Ejemplos con Vue.js
 
 Índice
-- [Ventajas respecto javascript puro](#ventajas-respecto-javascript-puro)
-- [Instalación y configuración](#instalacion-y-configuracion)
-- [Ejemplos básicos](#ejemplos-basicos)
+
+- Ventajas respecto javascript puro
+- Instalación y configuración
+- Ejemplos básicos
 - Rutas, componentes, axios, etc
 - Ejemplo con el portfolio
-- [Vue.js vs React](#vuejs-vs-react)
+- Vue.js vs React
 - Referencias
 
 ## Ventajas respecto javascript puro
 
-La inversión en el estudio de este tipo de frameworks vale la pena, ya que una vez aprendidos la programación de aplicaiones en javascript se vuelve mucho más sencilla y ágil.
+La inversión en el estudio de este tipo de frameworks vale la pena, ya que una vez aprendidos la programación de aplicaciones en javascript se vuelve mucho más sencilla y ágil.
 Básicamente existen 3 frameworks
 - React
 - Angular
-- Vue.js
-Enseñaremos aquí Vue porqué es el más sencillo y una vez conoces este es mucho más fácil aprender el resto.
+- Vue.js  
 
-Entre las ventajas más importantes podemos encontrar:
+Enseñaremos aquí Vue.js porqué es el más sencillo y una vez conoces este es mucho más fácil aprender el resto.
+
+Entre las ventajas más importantes de una aplicación desarrollada con esta filosofia podemos encontrar:
+
 - Solo se renderiza lo necesario de manera que mejora mucho el rendimiento de las aplicaciones
 - Permiten dividir la interfaz en componentes reutilizables y mantenibles
 - Facilita el desarrollo en equipo al poder trabajar en componentes diferentes
@@ -53,7 +56,7 @@ https://es.vuejs.org/v2/guide/installation
 
 
 
-## Ejemplos básico
+## Ejemplos básicos
 
 En /vue_sencillo tenemos un ejemplo que usa la librearia de vue en cdn
 No es necesario compilarla y funciona directamente 
@@ -72,41 +75,58 @@ En este ejemplo vemos una plantilla de un portfolio sencillo que se alimenta de 
 ## Componentes 
 
 > ejemplo basico 
-> convertir todo list en componentes
-> convertir portfolio a componentes
+
+> convertir todo list en componentes  
+
+> convertir portfolio a componentes  
 
 ## Rutas 
 
 ## crear aplicacion usando linea de comandos 
+
+En la linea de comandos vue permite crear un esqueleto completo con funcionalidades extra
+
 vue create my-router-project
 
 
-pAra crear spa
+Cuando queremos crear SPA (Single Page Aplications) es muy importante gestionar las urls
+
+Vue Router: A Tutorial for Vue 3
+
 https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
 
 
 npm i vue-router@next
 
 
-ejemplo sencillo 
+> ejemplo sencillo de SPA con rutas
 
 ## Axios 
 
-
+Podemos usar axios para leer archivos externos (apis json por ejemplo)
 
 ## Curso de Vue 
 
 https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/
 
 
-## Ejemplo con el portfolio
+## Ejercicios
 
-Desarrollar el caso del portfolio
+Desarrollar el caso del portfolio en vue como una SPA
 
 ## Vue.js vs React
 
-> explicar 
 
+Aunque la filosofia de base de Vue.js y React es lña misma tienen algunas diferencias
+
+Vue.js fue creado por Evan You, un ex ingeniero de Google, con el objetivo de tomar lo mejor de Angular y React
+React fue desarrollado por Facebook como una biblioteca de interfaz de usuario
+Vue tiene una curva de aprendizaje más suave y es considerado más fácil de aprender para principiantes
+
+Renderizado del Lado del Servidor
+
+React usa Next.js  
+Vue usa Nuxt.js
 
 ## Referencias 
 

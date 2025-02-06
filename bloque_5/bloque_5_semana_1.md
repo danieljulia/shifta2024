@@ -13,7 +13,7 @@
 ## Node.js y npm
 
 
-Node.js es un entorno de ejecución de JavaScript del lado del servidor. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo en el servidor web o directamente en el terminal de nuestro pc.
+**Node.js es un entorno de ejecución de JavaScript del lado del servidor**. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo en el servidor web o directamente en el terminal de nuestro pc.
 Esto lo convierte en un lenguaje de programación muy potente, permitiendo crear aplicaciones usando solo javascript (tanto en el servidor como en el cliente)
 
 Una vez instalado lo ejecutamos desde el terminal con la instrucción "node"
@@ -59,7 +59,7 @@ Hay que remarcar el carácter asíncrono de node, es decir las lineas de código
 Existen muchos módulos pensados para poder implementar aplicaciones complejas como http, path, os, etc
 
 
-### nvm y nvm-windows
+## nvm y nvm-windows
 
 Existen herramientas para poder manejar varias versiones de node simultaneamente.
 Una de ellas es nvm
@@ -71,14 +71,14 @@ nvm list              # Muestra versiones instaladas
 ````
 
 
-### El gestor de paquetes npm 
+## El gestor de paquetes npm 
 
 
 Una de las grandes ventajas de node es el gestor de paquetes aportados la comunidad, npm (node package manager)
 Es una libreria inmensa (tiene más de 2 millones de paquetes) que no solo permite añadir esas funcionalidades sinó que también gestiona las dependencias (un paquete puede ser que dependa de otro, y se instalan todos automáticamente), nos permite gestionar las versiones y actualizaciones
 
 Recursos
-  - [Repositorio oficial](https://www.npmjs.com/)
+  - [Repositorio oficial npm](https://www.npmjs.com/)
   - [Documentación oficial de npm](https://docs.npmjs.com/)
   - [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
 
@@ -89,7 +89,7 @@ Con este comando se crea este archivo
 npm init 
 ````
 
-### 2 Maneras de cargar nódulos 
+## 2 Maneras de cargar nódulos 
 
 Existen dos maneras diferentes (e incompatibles)
 
@@ -121,7 +121,7 @@ para instalar globalmente (si lo queremos usar en multiples proyectos)
 npm i -g cowsay 
 ```
 
-Los packages se copian en la carpeta node_modules
+Los packages se copian localmente en la carpeta node_modules
 Si se instalan globalmente en una carpeta del sistema que podemos saber con este comando
 
 ```
@@ -134,27 +134,35 @@ Para crear el archivo packages.json
 npm init 
 ```
 
-### Otros ejemplos con npm
+## Otros ejemplos con npm
 
 - Ejemplo con ascii art (dibuja con carácteres de texto)
 - Ejemplo con axios (busca en la wikipedia)
 - Ejemplo con chalk
 - Ejemplo cowsay
 
-### Gestión de dependencias con npm
+## Gestión de dependencias con npm
 
 - Entendiendo package.json
-  - [Guía de package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
-- Dependencias
 
-Siempre que queramos actualizar las librerias simplemente hacemos 
+- [Guía de package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
 
-```
+>  Analizamos uno de los package.json de los ejemplos 
+
+
+- Dependencias 
+
+Una dependencia quiere decir que muchos de los módulos dependen de otros (para no repetir código) de manera que cuando instalamos uno, automáticamente instalará también todos de los cuales depende.
+
+La ventaja de los packages también es que se van actualizando.
+Siempre que queramos actualizar las librerias simplemente haremos 
+
+``` js
 npm update
 ```
 
 
-### npx 
+## npx 
 
 Npx ejecuta paquetes de npm sin necesidad de instalarlos
 
@@ -165,13 +173,23 @@ npx cowsay "Hello, I'm a cow"
 ```
 
 Otro ejemplo que tenemos en este repositorio usa npx y una libreria para convertir los archivos md a formato pdf
-Lo podéis encontrar en el directorio "tools"
+Lo podéis encontrar en el directorio "tools" de este repositorio
 
 
 
 ## Parcel
 
 Parcel es un empaquetador de aplicaciones 
+Existen muchos otros como webpack, vite, etc. pero en este curso nos vamos a centrar en este por su simplicidad.
+
+La ventaja que ofrecen estos entornos son las siguientes:
+
+- Pueden minificar el código (más ligero)
+- Traducen el código a javascript más convencional (compatible con todos los navegadores)
+- Compila el código para poderlo publicar 
+- Permite automatizar tareas
+
+
 
 - Introducción a Parcel
   - [Documentación oficial de Parcel](https://parceljs.org/docs/)
@@ -199,6 +217,7 @@ Watch compila y muestra los cambios a la vez
 
 En package.json podemos añadir scripts para gestionar parcel
 
+```
 {
   "name": "ejemplo_parcel",
   "version": "1.0.0",
@@ -215,6 +234,7 @@ En package.json podemos añadir scripts para gestionar parcel
     "axios": "^1.7.9"
   }
 }
+```
 
 Que se ejecutan por ejemplo así
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Portfolio</title>
+    <link href="styles.css" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Artist Name</h1>
+        <p>Creative Works & Portfolio</p>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <div id="menu" class="menu">
+            <a href="#bio">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </header>
+    
+    <section id="bio" class="bio">
+        <h2>About the Artist</h2>
+        <p>Brief biography and artistic statement.</p>
+    </section>
+    
+    <section id="gallery" class="gallery">
+
+        <a href="details1.html">
+            <img src="https://loremflickr.com/300/200/art" alt="Artwork 1">
+            <p>Artwork 1</p>
+        </a>
+        <a href="details2.html">
+            <img src="https://loremflickr.com/300/200/design" alt="Artwork 2">
+            <p>Artwork 2</p>
+        </a>
+        <a href="details3.html">
+            <img src="https://loremflickr.com/300/200/illustration" alt="Artwork 3">
+            <p>Artwork 3</p>
+        </a>
+        <a href="details4.html">
+            <img src="https://loremflickr.com/300/200/painting" alt="Artwork 4">
+            <p>Artwork 4</p>
+        </a>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: artist@example.com</p>
+        <p>Social Media Links</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Artist Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
