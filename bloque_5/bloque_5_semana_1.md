@@ -10,7 +10,7 @@
 - Ejemplos usando librerias de npm
 
 
-## Node.js y npm
+## Node.js
 
 
 **Node.js es un entorno de ejecución de JavaScript del lado del servidor**. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo en el servidor web o directamente en el terminal de nuestro pc.
@@ -58,6 +58,8 @@ fs.readFile('ejemplo.txt', 'utf8', (err, data) => {
 Hay que remarcar el carácter asíncrono de node, es decir las lineas de código no se ejecutan necesariamente en orden lineal sino que cuando hay una petición asíncrona (como en el ejemplo al leer el archivo) esta parte de código se espera hasta haberla realizado.
 Existen muchos módulos pensados para poder implementar aplicaciones complejas como http, path, os, etc
 
+Node se puede usar tanto en el frontend como en el backend.
+Para utilizarlo en el frontend normalmente se usan herramientas (bundlers) que "traducen" el código javascript para que lo puedan entender los navegadores. Algunos de estos bundlers son WebPack, Vite, Parcel (que veremos más adelante), etc..
 
 ## nvm y nvm-windows
 
@@ -85,23 +87,9 @@ Recursos
 Los paquetes instalados se pueden gestionar automáticamente en un archivo llamado packages.json 
 Con este comando se crea este archivo
 
-````
+```
 npm init 
-````
-
-## 2 Maneras de cargar nódulos 
-
-Existen dos maneras diferentes (e incompatibles)
-
-MJS (Módulos ES)
-Usando import y export 
-Es la manera "moderna"
-En package.json debemos tener "type":"module" o la extensión debe ser .mjs
-
-CJS (CommonJS):
-Usando require() y module.exports
-Es la manera "antigua"
-Se entiende que se usa este modo cuando la extensión es .cjs
+```
 
 Para instalar un package
 
@@ -128,7 +116,29 @@ Si se instalan globalmente en una carpeta del sistema que podemos saber con este
 npm root -g
 ```
 
-Para crear el archivo packages.json 
+
+Para desinstalar 
+
+```
+npm uninstall cowsay
+```
+
+## 2 Maneras de cargar nódulos 
+
+Luego en nuestro código javascript existen dos maneras diferentes (e incompatibles) de cargar los módulos para poderlos utilizar
+
+MJS (Módulos ES)
+Usando import y export 
+Es la manera "moderna"
+En package.json debemos tener "type":"module" o la extensión debe ser .mjs
+
+CJS (CommonJS):
+Usando require() y module.exports
+Es la manera "antigua"
+Se entiende que se usa este modo cuando la extensión es .cjs
+
+
+Para crear el archivo package.json 
 
 ```
 npm init 
@@ -140,6 +150,7 @@ npm init
 - Ejemplo con axios (busca en la wikipedia)
 - Ejemplo con chalk
 - Ejemplo cowsay
+- Ejemplo con pdf-lib
 
 ## Gestión de dependencias con npm
 
@@ -150,9 +161,9 @@ npm init
 >  Analizamos uno de los package.json de los ejemplos 
 
 
-- Dependencias 
+### Dependencias 
 
-Una dependencia quiere decir que muchos de los módulos dependen de otros (para no repetir código) de manera que cuando instalamos uno, automáticamente instalará también todos de los cuales depende.
+Una dependencia quiere decir que muchos de los módulos dependen de otros (para no repetir código) de manera que cuando instalamos uno, automáticamente se instalarán también todos de los cuales depende.
 
 La ventaja de los packages también es que se van actualizando.
 Siempre que queramos actualizar las librerias simplemente haremos 
@@ -165,6 +176,7 @@ npm update
 ## npx 
 
 Npx ejecuta paquetes de npm sin necesidad de instalarlos
+No todos los paquetes lo permiten
 
 Ejemplo (lo podemos ejecutar en cualquier ruta de nuestro pc)
 
@@ -176,10 +188,11 @@ Otro ejemplo que tenemos en este repositorio usa npx y una libreria para convert
 Lo podéis encontrar en el directorio "tools" de este repositorio
 
 
-
 ## Parcel
 
-Parcel es un empaquetador de aplicaciones 
+Que pasa si queremos usar packages en un navegador (mezclado con html, css,etc)
+Tenemos que utilizar algún empaquetador (bundler)
+Para ello vamos a utilizar Parcel
 Existen muchos otros como webpack, vite, etc. pero en este curso nos vamos a centrar en este por su simplicidad.
 
 La ventaja que ofrecen estos entornos son las siguientes:
@@ -190,10 +203,6 @@ La ventaja que ofrecen estos entornos son las siguientes:
 - Permite automatizar tareas
 
 
-
-- Introducción a Parcel
-  - [Documentación oficial de Parcel](https://parceljs.org/docs/)
-- Configuración básica y avanzada
 - Optimización con Parcel
 
 Para instalar parcel 
@@ -210,6 +219,13 @@ parcel build index.html	Bundle and optimize for production.
 parcel watch index.html	Watch files and rebuild when changes are detected.
 ```
 
+- Introducción a Parcel
+  - [Documentación oficial de Parcel](https://parceljs.org/docs/)
+- Configuración básica y avanzada
+  https://parceljs.org/getting-started/webapp/
+
+
+
 Cuidado! no sirve para ejecutar js sino para publicar webs en html/css/js
 
 Build genera todo el código compilado en /dist 
@@ -225,7 +241,7 @@ En package.json podemos añadir scripts para gestionar parcel
   "type": "module",
   "source": "index.html",
  "scripts": {
-    "start": "parcel",
+    "start": "parcel",    
     "build": "parcel build"
   },
   "author": "",
@@ -248,20 +264,19 @@ De esta manera parcel generará el código "compilado" en /dist
 ## Ejercicios propuestos
 
 
-- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O un generador de ascii_art o cowsay interactivo a partir de un formulario
+- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente y que funcionen en un navegador, con parcel, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O un generador de ascii_art o cowsay interactivo a partir de un formulario
 
-- Utilizando la plantilla de un portfolio (html/css) crear una aplicación que lee los datos desde un archivo json.
+- Utilizando la plantilla de un portfolio (html/css) crear una aplicación que lee los datos desde un archivo json
 
 
 ## Recursos
 
-Como crear una web app con Parcel
+Como crear una web app con Parcel (recomendado)
 https://www.youtube.com/watch?v=R02ehdTzi3I&list=PPSV
 How to Build a Web App with Parcel.js - Quick & EASY JavaScript Bundler!
 
 Npm cheat sheet 
 https://media.jfrog.com/wp-content/uploads/2021/08/23165237/JFrog_NPM_CheatSheet_V4.pdf
-
 
 Introducción a node y npm
 https://eloquentjavascript.net/20_node.html
