@@ -20,7 +20,7 @@ Una vez instalado lo ejecutamos desde el terminal con la instrucción "node"
 
 Instalación de node:
 https://nodejs.org/en/download
-
+Al instalar node también se instala automáticamente npm
 
 La instrucción para saber la versión es: 
 
