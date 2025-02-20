@@ -41,9 +41,10 @@ function muestraResultados(data){
     container.innerHTML = ''; // Clear previous results
     results.forEach(result => {
       const title = result.title;
+      const snippet = result.snippet;
       const link = `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
-      const resultItem = document.createElement('div');
-      resultItem.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+      const resultItem = document.createElement('li');
+      resultItem.innerHTML = `<a href="${link}" target="_blank">${title}</a><p>${snippet}</p>`;
       container.appendChild(resultItem);
     });
 }

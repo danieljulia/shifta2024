@@ -632,9 +632,10 @@ function muestraResultados(data) {
     container.innerHTML = ''; // Clear previous results
     results.forEach((result)=>{
         const title = result.title;
+        const snippet = result.snippet;
         const link = `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
-        const resultItem = document.createElement('div');
-        resultItem.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+        const resultItem = document.createElement('li');
+        resultItem.innerHTML = `<a href="${link}" target="_blank">${title}</a><p>${snippet}</p>`;
         container.appendChild(resultItem);
     });
 }
@@ -1338,7 +1339,7 @@ exports.default = {
     asap
 };
 
-},{"a8d2c3349c87a903":"5lIGn","./helpers/bind.js":"haRQb","@parcel/transformer-js/src/esmodule-helpers.js":"jgs4f"}],"5lIGn":[function(require,module,exports,__globalThis) {
+},{"a8d2c3349c87a903":"d5jf4","./helpers/bind.js":"haRQb","@parcel/transformer-js/src/esmodule-helpers.js":"jgs4f"}],"d5jf4":[function(require,module,exports,__globalThis) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -1984,8 +1985,8 @@ exports.default = toFormData;
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */ /* eslint-disable no-proto */ 'use strict';
-var base64 = require("8d7b0712b5ea2b3");
-var ieee754 = require("603aed6e39afb648");
+var base64 = require("ef8bdd9e1ae8d8c5");
+var ieee754 = require("63d0f383527bddd1");
 var customInspectSymbol = typeof Symbol === 'function' && typeof Symbol['for'] === 'function' // eslint-disable-line dot-notation
  ? Symbol['for']('nodejs.util.inspect.custom') // eslint-disable-line dot-notation
  : null;
@@ -3207,7 +3208,7 @@ var hexSliceLookupTable = function() {
     return table;
 }();
 
-},{"8d7b0712b5ea2b3":"h2bQJ","603aed6e39afb648":"hqh7L"}],"h2bQJ":[function(require,module,exports,__globalThis) {
+},{"ef8bdd9e1ae8d8c5":"h2bQJ","63d0f383527bddd1":"hqh7L"}],"h2bQJ":[function(require,module,exports,__globalThis) {
 'use strict';
 exports.byteLength = byteLength;
 exports.toByteArray = toByteArray;
