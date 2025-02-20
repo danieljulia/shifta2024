@@ -264,7 +264,7 @@ De esta manera parcel generará el código "compilado" en /dist
 ## Ejercicios propuestos
 
 
-- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente y que funcionen en un navegador, con parcel, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O un generador de ascii_art o cowsay interactivo a partir de un formulario
+- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente y que funcionen en un navegador, con parcel, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O utilizando otra api de prueba como thedogapi o thecatapi.
 
 - Utilizando la plantilla de un portfolio (html/css) crear una aplicación que lee los datos desde un archivo json
 
