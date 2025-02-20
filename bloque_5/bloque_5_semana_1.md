@@ -84,7 +84,7 @@ Recursos
   - [Documentación oficial de npm](https://docs.npmjs.com/)
   - [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
 
-Los paquetes instalados se pueden gestionar automáticamente en un archivo llamado packages.json 
+Los paquetes instalados se pueden gestionar automáticamente en un archivo llamado package.json 
 Con este comando se crea este archivo
 
 ```

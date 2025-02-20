@@ -1,6 +1,6 @@
-import chalk from 'chalk';
+import tiza from 'chalk';
 
-console.log(chalk.blue('Hello world!'));
-console.log(chalk.red('This is an error message.'));
-console.log(chalk.green('Success!'));
-console.log(chalk.yellow('Warning!'));
+console.log(tiza.blue('Hello world!'));
+console.log(tiza.red('This is an error message.'));
+console.log(tiza.green('Success!'));
+console.log(tiza.yellow('Warning!'));

@@ -15,6 +15,7 @@ async function searchWikipedia(query) {
     const response = await axios.get(url, { params });
     const searchResults = response.data.query.search;
 
+    //ejercicio , aqui en lugar de mostrar los resultados en la consola escribirlos en el html usando js
     console.log(`Results for "${query}":`);
     searchResults.forEach((result, index) => {
       console.log(`\n${index + 1}. ${result.title}`);
