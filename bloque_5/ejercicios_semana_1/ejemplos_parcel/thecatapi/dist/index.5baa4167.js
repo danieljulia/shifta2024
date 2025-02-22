@@ -599,46 +599,18 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-//esta funcion retorna un objeto con los resultados de la busqueda en wikipedia 
-const searchWikipedia = async (query)=>{
-    try {
-        const response = await (0, _axiosDefault.default).get('https://en.wikipedia.org/w/api.php', {
-            params: {
-                action: 'query',
-                format: 'json',
-                list: 'search',
-                srsearch: query,
-                utf8: 1,
-                origin: '*'
-            }
-        });
-        console.log(response.data);
-        muestraResultados(response.data);
-    } catch (error) {
-        console.error('Error fetching data from Wikipedia API:', error);
-    }
-};
-//retorna el parametro de la url con el nombre que se le pase
-const getQueryParam = (param)=>{
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-};
-//recuperamos el parametro "query" de la url 
-const queryParam = getQueryParam('query');
-if (queryParam) searchWikipedia(queryParam);
-function muestraResultados(data) {
-    const results = data.query.search;
-    const container = document.getElementById('resultsContainer');
-    container.innerHTML = ''; // Clear previous results
+const url_api = "https://api.thecatapi.com/v1/images/search?limit=10&api_key=ylX4blBYT9FaoVd6OhvR";
+(0, _axiosDefault.default).get(url_api).then((response)=>{
+    const results = response.data;
     results.forEach((result)=>{
-        const title = result.title;
-        const snippet = result.snippet;
-        const link = `https://en.wikipedia.org/wiki/${encodeURIComponent(title)}`;
-        const resultItem = document.createElement('li');
-        resultItem.innerHTML = `<a href="${link}" target="_blank">${title}</a><p>${snippet}</p>`;
-        container.appendChild(resultItem);
+        const img = document.createElement('img');
+        img.src = result.url;
+        img.alt = 'Cat Image';
+        document.getElementById("fotos").appendChild(img);
     });
-}
+}).catch((error)=>{
+    console.error('Error fetching data:', error);
+});
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"jgs4f"}],"jo6P5":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -3208,7 +3180,7 @@ var hexSliceLookupTable = function() {
     return table;
 }();
 
-},{"8d7b0712b5ea2b3":"h2bQJ","603aed6e39afb648":"hqh7L"}],"h2bQJ":[function(require,module,exports,__globalThis) {
+},{"ef8bdd9e1ae8d8c5":"h2bQJ","63d0f383527bddd1":"hqh7L"}],"h2bQJ":[function(require,module,exports,__globalThis) {
 'use strict';
 exports.byteLength = byteLength;
 exports.toByteArray = toByteArray;

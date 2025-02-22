@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url_api = "https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=siam&api_key=ylX4blBYT9FaoVd6OhvR";
+const url_api = "https://api.thecatapi.com/v1/images/search?limit=10&api_key=ylX4blBYT9FaoVd6OhvR";
 
 axios.get(url_api)
   .then(response => {

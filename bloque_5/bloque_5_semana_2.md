@@ -12,8 +12,12 @@
 
 ## Ventajas respecto javascript puro
 
+Vue.js y otros frameworks frontend ofrecen ventajas significativas sobre JavaScript puro al simplificar y optimizar el desarrollo de aplicaciones web complejas. Proporcionan una estructura organizada mediante componentes reutilizables, lo que mejora la mantenibilidad y escalabilidad del código. Además, incorporan sistemas de reactividad automática (como el enlace de datos bidireccional en Vue.js) que sincronizan la interfaz con los datos subyacentes sin necesidad de manipular manualmente el DOM, reduciendo errores y código repetitivo. Estos frameworks también incluyen herramientas integradas para gestión de estado, enrutamiento y optimización de rendimiento, junto con un ecosistema de librerías y convenciones que aceleran el desarrollo. A diferencia del "Vanila JavaScript", que requiere soluciones personalizadas para cada funcionalidad, los frameworks estandarizan buenas prácticas y permiten enfocarse en la lógica de negocio, aumentando la productividad y facilitando la colaboración en equipos.
+
 La inversión en el estudio de este tipo de frameworks vale la pena, ya que una vez aprendidos la programación de aplicaciones en javascript se vuelve mucho más sencilla y ágil.
+
 Básicamente existen 3 frameworks
+
 - React
 - Angular
 - Vue.js  
@@ -54,16 +58,27 @@ La manera mas sencilla es con un CDN
 También se puede instalar con npm
 https://es.vuejs.org/v2/guide/installation
 
+```
+npm install vue
+```
 
 
 ## Ejemplos básicos
 
 En /vue_sencillo tenemos un ejemplo que usa la librearia de vue en cdn
 No es necesario compilarla y funciona directamente 
+Analizar esta aplicación
+
+Se ejecuta con 
+
+```
+parcel index.html
+```
+
 
 ## Ejemplo con parcel
 
-En vue_parcel tenemos una plantilla montada para funcionar con parcel.
+En vue_parcel tenemos una plantilla montada para funcionar con parcel un poco más compleja y usando el package npm.
 Se debe de compilar y el resultado se guarda en dist 
 Podemos ver los cambios en tiempo real
 

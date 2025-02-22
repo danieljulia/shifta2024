@@ -34,7 +34,11 @@
         <p>Total de tareas: {{ todos.length }}</p>
         <p>Completadas: {{ completedCount }}</p>
       </div>
+
+      completado: {{ completedCount }}
+      
     </div>
+
   </template>
   
   <script>

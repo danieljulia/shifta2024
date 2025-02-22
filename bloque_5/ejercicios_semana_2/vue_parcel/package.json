@@ -13,7 +13,7 @@
     "@parcel/transformer-vue": "^2.9.0",
     "parcel": "^2.9.0"
   },
-  "main": "index.js",
+  "main": "src/main.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

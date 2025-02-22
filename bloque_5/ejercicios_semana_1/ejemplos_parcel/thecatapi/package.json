@@ -2,6 +2,8 @@
   "name": "tmp",
   "version": "1.0.0",
   "description": "",
+  "source": "index.html",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --public-url /tmp/dist/",
