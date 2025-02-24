@@ -35,8 +35,8 @@
         <p>Completadas: {{ completedCount }}</p>
       </div>
 
-      completado: {{ completedCount }}
-      
+
+
     </div>
 
   </template>
