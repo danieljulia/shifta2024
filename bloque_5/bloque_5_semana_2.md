@@ -34,6 +34,16 @@ Entre las ventajas más importantes de una aplicación desarrollada con esta fil
 - Estructura más organizada y predecible
 - Código más limpio y modular
 
+## Posibles maneras de usar Vue
+
+https://vuejs.org/guide/extras/ways-of-using-vue
+
+- Como un script "standalone"
+- Para componentes
+- Single-Page Applications (SPA)
+- Fullstack / SSR (Server Side Rendering)
+- Aplicaciones móviles con Ionic Vue
+- Aplicaciones de desktop con Electron
 
 ## Instalación y configuración de Vue
 
@@ -45,22 +55,26 @@ https://es.vuejs.org/
 Instalación de vue 
 https://es.vuejs.org/v2/guide/installation
 
+Básicamente existen 3 maneras
 
-https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/
-
-
-La manera mas sencilla es con un CDN
+- Como script (CDN)
 
 ```
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 ```
 
-También se puede instalar con npm
-https://es.vuejs.org/v2/guide/installation
+- Como package npm
 
 ```
 npm install vue
 ```
+
+
+- Usando comandos en el terminal
+
+Introducción a vue3 de su creador
+https://www.vuemastery.com/courses/vue3-deep-dive-with-evan-you/vue3-overview
+
 
 
 ## Ejemplos básicos
@@ -89,45 +103,26 @@ En este ejemplo vemos una plantilla de un portfolio sencillo que se alimenta de 
 
 ## Componentes 
 
-> ejemplo basico 
+Ver ejemplo de portfolio con componentes para el listado de proyectos
 
-> convertir todo list en componentes  
 
-> convertir portfolio a componentes  
-
-## Rutas 
 
 ## crear aplicacion usando linea de comandos 
 
-En la linea de comandos vue permite crear un esqueleto completo con funcionalidades extra
-
-vue create my-router-project
-
-
-Cuando queremos crear SPA (Single Page Aplications) es muy importante gestionar las urls
-
-Vue Router: A Tutorial for Vue 3
-
-https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/
+En la linea de comandos vue permite crear un esqueleto completo con funcionalidades extra respondiendo una serie de preguntas
+Es un entorno muy completo, por ejemplo para crear SPA
 
 
-npm i vue-router@next
+npm create vue@latest
 
 
-> ejemplo sencillo de SPA con rutas
-
-## Axios 
-
-Podemos usar axios para leer archivos externos (apis json por ejemplo)
-
-## Curso de Vue 
+## Curso de Vue 2 (la mayoria de conceptos sirven para Vue 3)
 
 https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/
 
 
-## Ejercicios
+## Ejercicio propuesto con Vue
 
-Desarrollar el caso del portfolio en vue como una SPA
 
 ## Vue.js vs React
 
@@ -145,6 +140,6 @@ Vue usa Nuxt.js
 
 ## Referencias 
 
-Introducción a vue 
+Introducción y documentación oficial de vue 
 
 https://vuejs.org/guide/introduction.html

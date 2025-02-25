@@ -10052,8 +10052,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         (0, _vue.createElementVNode)("div", _hoisted_6, [
             (0, _vue.createElementVNode)("p", null, "Total de tareas: " + (0, _vue.toDisplayString)($data.todos.length), 1 /* TEXT */ ),
             (0, _vue.createElementVNode)("p", null, "Completadas: " + (0, _vue.toDisplayString)($options.completedCount), 1 /* TEXT */ )
-        ]),
-        (0, _vue.createTextVNode)(" completado: " + (0, _vue.toDisplayString)($options.completedCount), 1 /* TEXT */ )
+        ])
     ]);
 }
 if (module.hot) module.hot.accept(()=>{
