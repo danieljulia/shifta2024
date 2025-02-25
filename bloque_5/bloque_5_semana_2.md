@@ -79,7 +79,7 @@ https://www.vuemastery.com/courses/vue3-deep-dive-with-evan-you/vue3-overview
 
 ## Ejemplos básicos
 
-En /vue_sencillo tenemos un ejemplo que usa la librearia de vue en cdn
+En /vue_sencillo tenemos un ejemplo que usa la libreria de vue en cdn
 No es necesario compilarla y funciona directamente 
 Analizar esta aplicación
 
