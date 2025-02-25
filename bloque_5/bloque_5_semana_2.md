@@ -107,14 +107,14 @@ Ver ejemplo de portfolio con componentes para el listado de proyectos
 
 
 
-## crear aplicacion usando linea de comandos 
+## Crear aplicacion usando linea de comandos 
 
 En la linea de comandos vue permite crear un esqueleto completo con funcionalidades extra respondiendo una serie de preguntas
 Es un entorno muy completo, por ejemplo para crear SPA
 
-
+```
 npm create vue@latest
-
+```
 
 ## Curso de Vue 2 (la mayoria de conceptos sirven para Vue 3)
 
@@ -123,6 +123,7 @@ https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/
 
 ## Ejercicio propuesto con Vue
 
+Crear un prototipo de una página implementando alguna parte "reactiva" de vuestro trabajo final.
 
 ## Vue.js vs React
 
