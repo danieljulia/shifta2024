@@ -128,7 +128,7 @@ Crear un prototipo de una página implementando alguna parte "reactiva" de vuest
 ## Vue.js vs React
 
 
-Aunque la filosofia de base de Vue.js y React es lña misma tienen algunas diferencias
+Aunque la filosofia de base de Vue.js y React es la misma tienen algunas diferencias
 
 Vue.js fue creado por Evan You, un ex ingeniero de Google, con el objetivo de tomar lo mejor de Angular y React
 React fue desarrollado por Facebook como una biblioteca de interfaz de usuario
