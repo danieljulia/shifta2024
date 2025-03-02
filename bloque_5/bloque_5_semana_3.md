@@ -2,11 +2,28 @@
 
 Índice
 
+- Single Page Applications
 - Introducción a las PWA
 - Progressive Web Applications. App manifest 
 - Introducción a Firebase
 - Creación de la base de datos del portfolio en firebase realtime database
 - Firebase storage para almacenar archivos
+
+
+## Introducción a las SPA
+
+Una SPA es una aplicación web o sitio web que interactúa con el usuario cargando una única página HTML inicial y actualizando dinámicamente el contenido de esa página a medida que el usuario interactúa con la aplicación, en lugar de cargar páginas completas nuevas desde el servidor.
+
+Caracteristicas:
+
+- Navegación fluida
+- Carga asíncrona
+- Renderizado del lado del cliente
+- Menor carga del servidor
+
+En Vue se puede implementar utilizando vue-router
+
+Ver ejemplo sencillo
 
 ## Introducción a las PWA
 
@@ -25,7 +42,7 @@ En contrapartida no tienen tanto rendimiento (sobre todo en juegos y aplicacione
 En realidad son una evolución de las páginas web tradicionales 
 
 
-Ejemplo sencillo 
+Ver ejemplo sencillo 
 
 Si entramos en este ejemplo
 https://airhorner.com/
