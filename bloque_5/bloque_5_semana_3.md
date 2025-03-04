@@ -159,7 +159,10 @@ Como almacenar archivos y conceptos más avanzados
 - Permite gestionar la autenticación
 - Permite acceso a estadísticas de uso
 
-## Ejercicios
+## Ejercicio
 
-> A partir de nuestro portfolio SPA, PWA, vincularlo con la base de datos en firebase de manera que podamos editar los proyectos ahi.
+A partir de nuestra maquetación del  portfolio crear una SPA de manera que además de la página de inicio tenga la página única de cada proyecto y una pàgina de contacto.
+Vincularlo con la base de datos en firebase (u otro sistema equivalente) de manera que podamos editar los proyectos ahi. 
+Convertirla en PWA creando un manifest.json.
+
 
