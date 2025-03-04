@@ -41,8 +41,11 @@ En contrapartida no tienen tanto rendimiento (sobre todo en juegos y aplicacione
 
 En realidad son una evolución de las páginas web tradicionales 
 
+Video introductorio
+https://www.youtube.com/watch?v=BByUknfLTuA&list=PLlrxD0HtieHjqO1pNqScMngrV7oFro-TY
 
-Ver ejemplo sencillo 
+
+
 
 Si entramos en este ejemplo
 https://airhorner.com/
@@ -50,6 +53,8 @@ y desconectamos la conexión de internet veremos que sigue funcionando.
 Además la podemos instalar en el móvil con su propio icono
 https://airhorner.com/manifest.json
 
+
+> Ver ejemplo sencillo 
 
 ## Progressive Web Applications. App manifest 
 
@@ -80,6 +85,8 @@ Ejemplo
 }
 ```
 
+En el inspector del navegador podemos ver todos sus campos (en la sección application)
+
 Existen heramientas que permiten crear el archivo manifest 
 https://progressier.com/pwa-manifest-generator
 https://app-manifest.firebaseapp.com/
@@ -90,11 +97,37 @@ https://web.dev/articles/add-manifest
 
 > Ejemplo. Convertimos nuestro portfolio en una PWA añadiendo en manifest.
 
+## Workbox
+
+Uno de los temas más interesantes de las PWA es que pueden funcionar (opcionalmente) off-line. Esto se consigue mediante los "service workers"
+Existe una libreria de google llamada Workbox que facilita mucho esta funcionalidad.
+
+https://developer.chrome.com/docs/workbox
+
+Es un package de npm
+npm install --save-dev workbox-cli
+
+
+workbox --version
+
+workbox wizard
+
+workbox generateSW
+
+Nota: Otra manera de lanzar un servidor local con npx
+npx http-server -p 8080
+
+
 ## Introducción a Firebase
 
 Firestore es un servicio de base de datos de Google en la nube que forma parte de Firebase 
 Una de sus ventajas es que tiene un ajuste de escala automático (adapta automáticamente los recursos a lo que necesita)
 Es gratuito si el uso es limitado
+
+https://firebase.google.com/
+
+Video introducción a Firebase 
+https://www.youtube.com/watch?v=p9pgI3Mg-So&t=3s
 
 Realtime database es otro servicio de datos con otras características (mas pensado para optimizar la velocidad)
 
@@ -108,6 +141,9 @@ Debemos crear una cuenta y activar los servicios Firestore database (para almace
 
 
 Implementar portfolio con firebase 
+
+ver ejemplo firestore_simple
+
 
 ## Backend de escritura 
 

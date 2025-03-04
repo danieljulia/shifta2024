@@ -15,13 +15,12 @@
     <script>
         // Initialize Firebase
         const firebaseConfig = {
-            apiKey: "xxxxxxxxxxxx", //poner aqui la api key , etc
-            authDomain: "prova-app-android-581f6.firebaseapp.com",
-            databaseURL: "https://prova-app-android-581f6.firebaseio.com",
-            projectId: "prova-app-android-581f6",
-            storageBucket: "prova-app-android-581f6.firebasestorage.app",
-            messagingSenderId: "896015245287",
-            appId: "1:896015245287:web:dc389a74d38331a290e742"
+            apiKey: "xxxxxxxxx", //introduce tu apiKey y resto de datos
+            authDomain: "un-proyecto-para-shifta.firebaseapp.com",
+            projectId: "un-proyecto-para-shifta",
+            storageBucket: "un-proyecto-para-shifta.firebasestorage.app",
+            messagingSenderId: "20906720108",
+            appId: "1:20906720108:web:78340fcc1c181c8bee1149"
         };
 
         firebase.initializeApp(firebaseConfig);
@@ -36,7 +35,7 @@
                     <div style="margin-bottom: 20px;">
                         <h2>${data.nombre || 'No name'}</h2>
                         ${data.image ? `<img src="${data.image}" style="max-width: 200px;">` : ''}
-                        <p>Category: ${data.category || 'No category'}</p>
+                        <p>Category: ${data.categoria || 'No category'}</p>
                     </div>
                 `;
             });

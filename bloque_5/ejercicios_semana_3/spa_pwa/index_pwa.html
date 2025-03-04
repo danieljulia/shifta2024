@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue SPA Example</title>
+  <title>Vue SPA - PWA Example</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 <link rel="stylesheet" href="styles.css">
-
+  <!-- PWA manifest link - point to external manifest.json -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- PWA related meta tags -->
+  <meta name="theme-color" content="#42b983">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vue PWA">
+  
   
 </head>
 <body>
@@ -19,7 +27,6 @@
       <router-link to="/contact">Contact</router-link>
     </div>
     
-    <!-- transicion -->
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
