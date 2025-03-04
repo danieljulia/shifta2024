@@ -54,7 +54,7 @@ Además la podemos instalar en el móvil con su propio icono
 https://airhorner.com/manifest.json
 
 
-> Ver ejemplo sencillo 
+
 
 ## Progressive Web Applications. App manifest 
 
@@ -95,7 +95,7 @@ Para saber más:
 https://web.dev/articles/add-manifest
 
 
-> Ejemplo. Convertimos nuestro portfolio en una PWA añadiendo en manifest.
+> Ejemplo. Convertimos nuestro portfolio en una PWA añadiendo en manifest (spa_pwa)
 
 ## Workbox
 
