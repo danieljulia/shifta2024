@@ -87,7 +87,7 @@ Ejemplo
 
 En el inspector del navegador podemos ver todos sus campos (en la sección application)
 
-Existen heramientas que permiten crear el archivo manifest 
+Existen herramientas que permiten crear el archivo manifest 
 https://progressier.com/pwa-manifest-generator
 https://app-manifest.firebaseapp.com/
 
@@ -135,6 +135,11 @@ Storage sirve para almacenar archivos.
 
 Debemos crear una cuenta y activar los servicios Firestore database (para almacenar nuestros datos en json) y Storage (para poder subir las imágenes y archivos descargables).
 
+## Alternativas más sencillas a firebase 
+
+
+- https://jsonbin.io/a
+- https://mockapi.io/projects
 
 
 ## Creación de la base de datos del portfolio en firebase realtime database

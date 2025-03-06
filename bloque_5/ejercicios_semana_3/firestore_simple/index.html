@@ -15,7 +15,7 @@
     <script>
         // Initialize Firebase
         const firebaseConfig = {
-            apiKey: "xxxxxxxxx", //introduce tu apiKey y resto de datos
+            apiKey: "AIzaSyAexCwr4XmjGm4-T5r7Himg5QCxDJfTAl0", //introduce tu apiKey y resto de datos
             authDomain: "un-proyecto-para-shifta.firebaseapp.com",
             projectId: "un-proyecto-para-shifta",
             storageBucket: "un-proyecto-para-shifta.firebasestorage.app",
@@ -31,6 +31,7 @@
             const projectsDiv = document.getElementById('projects');
             querySnapshot.forEach((doc) => {
                 const data = doc.data();
+                console.log(data)
                 projectsDiv.innerHTML += `
                     <div style="margin-bottom: 20px;">
                         <h2>${data.nombre || 'No name'}</h2>

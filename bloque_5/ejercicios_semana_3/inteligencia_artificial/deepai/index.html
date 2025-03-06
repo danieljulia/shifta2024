@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DeepAI</title>
+
+</head>
+<body>
+    <h1>DeepAI</h1>
+  
+    <img id="image" src="" alt="Generated Image">
+
+
+<script>
+/*
+https://deepai.org/ 
+DeepAI es una plataforma que ofrece una API para generar imágenes a partir de texto.
+
+Es de pago, unos 0.05€ por cada imagen generada.
+
+Posibles modificaciones:
+- que el usuario pueda escribir el prompt (en un textarea)
+- que se guarden las imágenes generadas 
+- etc..
+
+*/
+fetch("https://api.deepai.org/api/text2img", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "api-key": "xxxxx" // Substitueix amb la teva clau d'API
+    },
+    body: "text=an ancient olive tree in the delta of a river"
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+    document.getElementById("image").src = data.output_url; // Display image
+})
+.catch(error => console.error("Error:", error));
+
+</script>
+</body>
+</html>
