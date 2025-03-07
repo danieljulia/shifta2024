@@ -8,7 +8,7 @@ import Replicate from "replicate";
 const replicate = new Replicate();
 
 const input = {
-    prompt: "black forest gateau cake spelling out the words \"FLUX SCHNELL\", tasty, food photography, dynamic shot"
+    prompt: "matcha cake spelling out the words \"SHIFTA\", tasty, food photography, dynamic shot"
 };
 
 const output = await replicate.run("black-forest-labs/flux-schnell", { input });
