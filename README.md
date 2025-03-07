@@ -1,3 +1,3 @@
 # shifta2024
 
-He escrito esto en el readme
+Apuntes para el curso de Javascript avanzado en Shifta
