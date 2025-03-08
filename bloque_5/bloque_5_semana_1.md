@@ -1,4 +1,9 @@
 
+---
+layout: default
+title: Bloque 5 Semana 1
+---
+
 
 # Bloque 5. Semana 1. Desarrollo FrontEnd con Node.js, npm y Parcel
 
