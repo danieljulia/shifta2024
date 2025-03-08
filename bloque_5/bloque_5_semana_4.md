@@ -70,6 +70,9 @@ Se puede asignar a un dominio
 GitHub Pages soporta Jekyll, un generador de sitios estáticos
 Puedes usar Markdown (.md) o HTML (.html)
 
+Documentación de GitHub Pages
+https://docs.github.com/en/pages
+
 
 ## Despliegue continuo
 
