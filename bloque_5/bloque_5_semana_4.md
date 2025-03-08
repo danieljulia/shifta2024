@@ -12,15 +12,23 @@
 ## Gestión de servidores web
 
 Puede ser infraestructura física (on-premise) o en la nube (cloud computing)  
+
 Sistemas operativos más común: Linux 
-Almacenamiento
-Bases de datos 
-Backups automáticos
-Gestión de dominios  
-Acceso por ftp/sftp/ssh  
-Implementación de certificados SSL/TLS  
-Control de accesos y autenticación  
-Implementación de caché  
+Servidor web: Apache, Nginx,IIS
+Bases de datos: mysql
+Lenguajes de programación: php, node
+
+Servicios que pueden ofrecer las empresas de alojamiento web (hosting)
+
+- Backups automáticos
+- Gestión de dominios  
+- Acceso por ftp/sftp/ssh  
+- Implementación de certificados SSL/TLS  
+- Control de accesos y autenticación  
+- Implementación de caché  
+- Análisis de registros (logs)
+- Estrategias de backup
+- Instalación de aplicaciones web y cms
 
 Algunas opciones gratuitas 
 
@@ -36,13 +44,12 @@ https://www.netlify.com/
 Como publicar en netlify 
 https://www.netlify.com/
 
-Deploy manual
+### Deploy manual
 Simplemente subimos una carpeta con todos los archivos. Es importante que el principal se llame index.html. Netlify publicará la web en una dirección provisional del tipo https://spiffy-concha-5999a1.netlify.app/
 
 Luego podemos asignar un dominio real en lugar del provisional.
 
-Deploy a través de git
-
+### Deploy a través de git
 
 Un ejemplo de pasos a seguir
 - Crear un repositorio en github
@@ -54,10 +61,15 @@ En este momento nos pedirá autenticarnos y podremos ver todos los proyectos que
 - La ventaja ahora es que simplemente haciendo push en nuestro entorno local se publicará automáticamente la web en la dirección pública.
 
 
-## Publicación con github
+## Publicación usando github
 
 Git pages 
 Solo está pensado para páginas html estáticas
+El repositorio debe ser público
+Se puede asignar a un dominio
+GitHub Pages soporta Jekyll, un generador de sitios estáticos
+Puedes usar Markdown (.md) o HTML (.html)
+
 
 ## Despliegue continuo
 
