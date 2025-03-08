@@ -2,3 +2,4 @@ plugins:
   - jekyll-relative-links
 relative_links:
   enabled: true
+markdown: kramdown
