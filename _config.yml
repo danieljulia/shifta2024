@@ -3,3 +3,4 @@ plugins:
 relative_links:
   enabled: true
 markdown: kramdown
+theme: jekyll-theme-minimal
