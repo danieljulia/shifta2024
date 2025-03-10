@@ -98,20 +98,40 @@ Ambos se basan en la mejora constante, la flexibilidad y que están centrados en
 
 ## Métricas de uso
 
-Métricas de Rendimiento
+Existen básicamente 2 métricos de uso en una web, las técnicas (de rendimiento) y las de experiencia de usuario (visitas)
 
-- Tiempo de carga inicial
+### Métricas técnicas (de Rendimiento)
+
+- Tiempo que tarda el contenido principal en mostrarse, Largest Contentful Paint (LCP)
+- Retraso en la respuesta tras la primera interacción del usuario, First Input Delay (FID)
 - Tiempo de renderizado
-- etc
 
 Podemos usar 
 
-- Chrome DevTools
-- Lighthouse (pagespeed, google)
+- El inspector del navegador nos da muchas información (Chrome DevTools)
+- Google Lighthouse
+- PageSpeed Insights
+
+###  Métricas de Experiencia de Usuario (UX Metrics)
+
+- Tasa de conversión y rebote (Porcentaje de usuarios que completan una acción clave)
+- Bounce Rate (Tasa de rebote): Porcentaje de usuarios que abandonan la página sin interactuar
+- Accesibilidad 
+
 
 Herramientas de Medición
 
 - Google Analytics
 - Firebase Analytics
+- Mapas de calor y grabaciones de usuarios
+
+## Ejemplo de integración con google analytics 
+
+
+## Ejercicios
+
+Como ejercicio para esta parte del temario se sugiere añadir analítica web al ejemplo de la práctica anterior (vuejs) y publicarlo utilizando netlify. 
+Se debe entregar un documento especificando la url de la web y una captura de pantalla del panel de google analytics mostrando información en tiempo real del sitio durante una visita.
+
 
 
