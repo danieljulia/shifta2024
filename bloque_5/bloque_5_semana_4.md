@@ -13,6 +13,13 @@
 
 Puede ser infraestructura física (on-premise) o en la nube (cloud computing)  
 
+De más barato a más caro 
+
+- Hosting compartido 
+- Hosting VPS (Servidor privado virtual)
+- Hosting dedicado 
+- Hosting en la nube
+
 Sistemas operativos más común: Linux 
 Servidor web: Apache, Nginx,IIS
 Bases de datos: mysql
@@ -29,6 +36,9 @@ Servicios que pueden ofrecer las empresas de alojamiento web (hosting)
 - Análisis de registros (logs)
 - Estrategias de backup
 - Instalación de aplicaciones web y cms
+
+Uso de CPanel y equivalentes
+Ver ejemplo
 
 Algunas opciones gratuitas 
 
