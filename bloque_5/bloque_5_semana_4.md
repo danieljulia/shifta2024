@@ -127,6 +127,27 @@ Herramientas de Medición
 
 ## Ejemplo de integración con google analytics 
 
+- Crear una cuenta en google analytics 
+- Usando una cuenta de google entrar en https://analytics.google.com/ y crear una cuenta 
+- Después de crear la cuenta crear una propiedad
+- Asignarle una zona horaria, moneda, estáticas 
+- Seleccionar web como plataforma 
+- Copiar el código siguiendo las instrucciones 
+
+El código será de este estilo, donde XXX és el codigo de seguimiento
+
+```
+<script async src="https://www.googletagmanager.com/gtag/js?id=XXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'XXX');
+</script>
+```
+
+Después de activarlo podemos comprobar que se están capturando los datos
 
 ## Ejercicios
 
