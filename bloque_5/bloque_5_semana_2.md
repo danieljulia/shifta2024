@@ -79,26 +79,26 @@ https://www.vuemastery.com/courses/vue3-deep-dive-with-evan-you/vue3-overview
 
 ## Ejemplos básicos
 
-En /vue_sencillo tenemos un ejemplo que usa la libreria de vue en cdn
+En "1_vue_sencillo" tenemos un ejemplo que usa la libreria de vue en cdn
 No es necesario compilarla y funciona directamente 
 Analizar esta aplicación
 
-Se ejecuta con 
+Se ejecuta con (si antes hemos instalado vite globalmente)
 
 ```
-parcel index.html
+vite
 ```
 
 
 ## Ejemplo con parcel
 
-En vue_parcel tenemos una plantilla montada para funcionar con parcel un poco más compleja y usando el package npm.
+En "2_vue_vite" tenemos una plantilla montada para funcionar con vite un poco más compleja y usando el package npm.
 Se debe de compilar y el resultado se guarda en dist 
 Podemos ver los cambios en tiempo real
 
 ## Ejemplo de portfolio con vue 
 
-En este ejemplo vemos una plantilla de un portfolio sencillo que se alimenta de un archivo json con los contenidos
+En este ejemplo "3_portfolio" vemos una plantilla de un portfolio sencillo que se alimenta de un archivo json con los contenidos
 
 
 ## Componentes 

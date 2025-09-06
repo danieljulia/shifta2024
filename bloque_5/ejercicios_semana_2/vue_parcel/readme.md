@@ -1,4 +1,0 @@
-
-parcel
-o
-npm start

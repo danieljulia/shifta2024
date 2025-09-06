@@ -3,7 +3,7 @@
 
 Índice 
 - Node.js y npm
-- Vite (empaquetador de aplicaciones y servidor de desarrollo)
+- Parcel (empaquetador de aplicaciones)
 - Gestión de dependencias 
 - Ejemplos usando librerias de npm
 
@@ -16,24 +16,20 @@ Esto lo convierte en un lenguaje de programación muy potente, permitiendo crear
 
 Una vez instalado lo ejecutamos desde el terminal con la instrucción "node"
 
-Instalación de Node.js:  
-[https://nodejs.org/en/download](https://nodejs.org/en/download)
-
-> Al instalar Node.js también se instala automáticamente npm.
-
-> se puede instalar también con brew 
+Instalación de node:
+https://nodejs.org/en/download
+Al instalar node también se instala automáticamente npm
 
 La instrucción para saber la versión es: 
 
-
-```bash
+```
 node -v
 ```
 (nos devolverá por ejemplo v20.7.0)
 
 Una vez instalado podemos ejecutar un archivo en javascript de la siguiente manera 
 
-```js
+```
 node ejemplo.js 
 ```
 
@@ -43,10 +39,8 @@ El código en ejemplo.js puede ser para empezar
 console.log("Hola Mundo")
 ```
 
-A diferencia del JavaScript que usamos en los navegadores, Node.js permite cargar módulos con funcionalidades más avanzadas que normalmente no existen en el JavaScript del navegador.
-Por ejemplo, el módulo fs nos permite trabajar con archivos (leer o escribir).
-
-Ejemplo para leer un archivo externo (ejemplo.txt) y mostrarlo en consola:
+A diferencia del javascript que podemos usar en los navegadores node permite cargar "módulos" con opciones más avanzadas que normalmente no existen en el javascript del navegador. Por ejemplo el módulo fs nos permite realizar opciones con archivos (leer o escribir)
+En el siguiente ejemplo vemos como el código lee un archivo externo (ejemplo.txt) y lo muestra en la consola. 
 
 ```
 //cargamos este módulo
@@ -59,15 +53,16 @@ fs.readFile('ejemplo.txt', 'utf8', (err, data) => {
 });
 ```
 
-Hay que remarcar el carácter asíncrono de Node.js: las líneas de código no se ejecutan necesariamente en orden lineal; cuando hay una operación asíncrona (como leer un archivo) se espera su finalización antes de continuar.
+Hay que remarcar el carácter asíncrono de node, es decir las lineas de código no se ejecutan necesariamente en orden lineal sino que cuando hay una petición asíncrona (como en el ejemplo al leer el archivo) esta parte de código se espera hasta haberla realizado.
+Existen muchos módulos pensados para poder implementar aplicaciones complejas como http, path, os, etc
 
-Node.js se puede usar tanto en el frontend como en el backend.
-Para usarlo en el frontend normalmente necesitamos herramientas (bundlers) que "traduzcan" el código para que lo puedan entender todos los navegadores. Algunos de estos bundlers son Webpack, Vite, Parcel, etc.
+Node se puede usar tanto en el frontend como en el backend.
+Para utilizarlo en el frontend normalmente se usan herramientas (bundlers) que "traducen" el código javascript para que lo puedan entender los navegadores. Algunos de estos bundlers son WebPack, Vite, Parcel (que veremos más adelante), etc..
 
 ## nvm y nvm-windows
 
 Existen herramientas para poder manejar varias versiones de node simultaneamente.
-Una de ellas es nvm:
+Una de ellas es nvm
 
 ````
 nvm install 16.14.0     # Instala versión específica
@@ -128,16 +123,17 @@ npm uninstall cowsay
 
 ## 2 Maneras de cargar módulos 
 
-En JavaScript (Node.js) existen dos maneras diferentes (e incompatibles) de cargar módulos:
+Luego en nuestro código javascript existen dos maneras diferentes (e incompatibles) de cargar los módulos para poderlos utilizar
 
-MJS (ES Modules) — Usando import y export
-Es la manera moderna.
-Requiere "type":"module" en package.json o la extensión .mjs.
+MJS (Módulos ES)
+Usando import y export 
+Es la manera "moderna"
+En package.json debemos tener "type":"module" o la extensión debe ser .mjs
 
-CJS (CommonJS) — Usando require() y module.exports
-Es la manera tradicional.
-Se asume este formato cuando la extensión es .cjs.
-
+CJS (CommonJS):
+Usando require() y module.exports
+Es la manera "antigua"
+Se entiende que se usa este modo cuando la extensión es .cjs
 
 
 Para crear el archivo package.json 
@@ -190,70 +186,92 @@ Otro ejemplo que tenemos en este repositorio usa npx y una libreria para convert
 Lo podéis encontrar en el directorio "tools" de este repositorio
 
 
-## Vite - Servidor de desarrollo y empaquetador moderno
+## Parcel
+
+Que pasa si queremos usar packages en un navegador (mezclado con html, css,etc)
+Tenemos que utilizar algún empaquetador (bundler)
+Para ello vamos a utilizar Parcel
+Existen muchos otros como webpack, vite, etc. pero en este curso nos vamos a centrar en este por su simplicidad.
+
+La ventaja que ofrecen estos entornos son las siguientes:
+
+- Pueden minificar el código (más ligero)
+- Traducen el código a javascript más convencional (compatible con todos los navegadores)
+- Compila el código para poderlo publicar 
+- Permite automatizar tareas
 
 
-Cuando desarrollamos para navegador y usamos dependencias de npm, necesitamos un bundler que:
+- Optimización con Parcel
 
-- Traduzca código moderno a JS compatible con todos los navegadores
-- Optimice, minifique y gestione dependencias
-- Permita hot reload para ver cambios en tiempo real
-
-En este curso usaremos **Vite** por ser rápido, moderno y sencillo.
-
-
-Para  crear un nuevo proyecto:
+Para instalar parcel 
 
 ```
-npm create vite@latest
+npm install -g  parcel
 ```
 
-Luego hay que elegir nombre, framework (por ejemplo, Vanilla, React, Vue...) y variante (JavaScript o TypeScript).
-De momento escogeremos siempre Vanilla y JavaScript
+Una vez instalado podemos ejecutar los siguientes comandos 
 
-Entrar en el proyecto e instalar dependencias:
+```
+parcel index.html	Run a development server.
+parcel build index.html	Bundle and optimize for production.
+parcel watch index.html	Watch files and rebuild when changes are detected.
+```
 
-cd nombre-proyecto
-npm install
+- Introducción a Parcel
+  - [Documentación oficial de Parcel](https://parceljs.org/docs/)
+- Configuración básica y avanzada
+  https://parceljs.org/getting-started/webapp/
 
-Scripts de desarrollo con Vite
-En package.json se crean scripts como estos:
+
+
+Cuidado! no sirve para ejecutar js sino para publicar webs en html/css/js
+
+Build genera todo el código compilado en /dist 
+Watch compila y muestra los cambios a la vez
+
+En package.json podemos añadir scripts para gestionar parcel
 
 ```
 {
-  "scripts": {
-    "dev": "vite",         // Inicia servidor de desarrollo
-    "build": "vite build", // Empaqueta para producción
-    "preview": "vite preview" // Previsualiza la build
+  "name": "ejemplo_parcel",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "source": "index.html",
+ "scripts": {
+    "start": "parcel",    
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9"
   }
 }
 ```
 
-Ejecutar el servidor de desarrollo:
+Que se ejecutan por ejemplo así
 
 ```
-npm run dev
+npm run start
 ```
-Esto levanta un servidor con recarga automática por ejemploe en http://localhost:5173.
 
-Ventajas de Vite
-- Rápido: usa esbuild para compilar y es casi instantáneo en desarrollo.
-- Hot Module Replacement: cambios visibles sin recargar toda la página.
-- Compatible con ES Modules: aprovecha la sintaxis moderna.
+De esta manera parcel generará el código "compilado" en /dist
 
-Listo para producción: genera un /dist optimizado.
 
 ## Ejercicios propuestos
 
 
-- Mejorar visualmente uno de los ejemplos de librerías npm para que funcione en el navegador usando Vite.
-- Crear una mini aplicación que consulte una API (ej. TheDogAPI o TheCatAPI) y muestre datos con estilos.
-- Usar una plantilla HTML/CSS de portfolio y leer datos desde un archivo JSON
+- A partir de alguno de los ejemplos proporcionados de librerias npm mejorarlos visualmente y que funcionen en un navegador, con parcel, por ejemplo en caso de la wikipedia que se pueda ver en la página, con estilos. O utilizando otra api de prueba como thedogapi o thecatapi.
+
+- Utilizando la plantilla de un portfolio (html/css) crear una aplicación que lee los datos desde un archivo json
+
 
 ## Recursos
 
-Documentación oficial de Vite
-https://vite.dev/
+Como crear una web app con Parcel (recomendado)
+https://www.youtube.com/watch?v=R02ehdTzi3I&list=PPSV
+How to Build a Web App with Parcel.js - Quick & EASY JavaScript Bundler!
 
 Npm cheat sheet 
 https://media.jfrog.com/wp-content/uploads/2021/08/23165237/JFrog_NPM_CheatSheet_V4.pdf

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>SPA con Vue Router y archivo externo</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/vue-router@4"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>Mi SPA</h1>
+    <nav>
+      <router-link to="/">🏠 Inicio</router-link> | 
+      <router-link to="/about">ℹ️ Acerca de</router-link>
+    </nav>
+    <hr>
+    <router-view></router-view>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    const { createRouter, createWebHashHistory } = VueRouter;
+
+    // Página principal
+    const Home = { template: "<h2>Bienvenido a la página de inicio</h2>" };
+
+    // Página "About" que carga contenido externo
+    const About = {
+      template: `
+        <div>
+          <h2>Cargando contenido externo...</h2>
+          <div v-html="contenido"></div>
+        </div>
+      `,
+      data() {
+        return { contenido: "" };
+      },
+      mounted() {
+        fetch("about.html")
+          .then(res => res.text())
+          .then(html => {
+            this.contenido = html;
+          })
+          .catch(err => {
+            this.contenido = "<p style='color:red;'>Error al cargar contenido</p>";
+          });
+      }
+    };
+
+    // Configuración de rutas
+    const routes = [
+      { path: "/", component: Home },
+      { path: "/about", component: About }
+    ];
+
+    const router = createRouter({
+      history: createWebHashHistory(),
+      routes
+    });
+
+    createApp({}).use(router).mount("#app");
+  </script>
+</body>
+</html>
