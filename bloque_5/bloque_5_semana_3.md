@@ -34,6 +34,7 @@ En Vue se puede implementar utilizando vue-router
 
 Veamos un ejemplo de una SPA con dos opciones, Home y About
 (ver vue_spa)
+En el directorio del ejemplo hay una explicación de cómo se ha creado
 
 
 Ver ejemplo sencillo
@@ -239,8 +240,17 @@ Como almacenar archivos y conceptos más avanzados
 
 ## Ejercicio
 
-A partir de nuestra maquetación del  portfolio crear una SPA de manera que además de la página de inicio tenga la página única de cada proyecto y una pàgina de contacto.
+A partir de nuestra maquetación del portfolio crear una SPA de manera que además de la página de inicio tenga la página única de cada proyecto y una pàgina de contacto.
 Vincularlo con la base de datos en mockapi (u otro sistema equivalente) de manera que podamos editar los proyectos ahi. 
 Convertirla en PWA creando un manifest.json.
+Más en concreto debe tener las siguientes funcionalidades:
+- Página de inicio donde se muestran todos los proyectos, cada uno de ellos con un enlace que te lleva a ver los detalles
+- Página de contacto
+- Menú de navegación con las opciones: Inicio, Contacto
+- Debe funcionar como una SPA
+- Página de cada proyecto con más información
+- Convertirlo en PWA (simplemente añadir un manifest.json)
+
+(Se puede utilizar como punto de partida el ejemplo vue_spa)
 
 

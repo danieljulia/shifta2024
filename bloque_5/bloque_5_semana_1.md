@@ -1,265 +1,287 @@
 # Bloque 5. Semana 1. Desarrollo FrontEnd con Node.js, npm y Parcel
 
+## Índice
+- [Node.js](#nodejs)
+- [nvm y nvm-windows](#nvm-y-nvm-windows)
+- [El gestor de paquetes npm](#el-gestor-de-paquetes-npm)
+- [Dos maneras de cargar módulos](#dos-maneras-de-cargar-módulos)
+- [Otros ejemplos con npm](#otros-ejemplos-con-npm)
+- [Gestión de dependencias con npm](#gestión-de-dependencias-con-npm)
+- [npx](#npx)
+- [Vite - Servidor de desarrollo y empaquetador moderno](#vite---servidor-de-desarrollo-y-empaquetador-moderno)
+- [Ejercicios propuestos](#ejercicios-propuestos)
+- [Recursos](#recursos)
 
-Índice 
-- Node.js y npm
-- Vite (empaquetador de aplicaciones y servidor de desarrollo)
-- Gestión de dependencias 
-- Ejemplos usando librerias de npm
-
+---
 
 ## Node.js
 
+**Node.js es un entorno de ejecución de JavaScript del lado del servidor**. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo, en un servidor o directamente en el terminal de nuestro PC.  
+Esto lo convierte en una herramienta muy potente, ya que permite crear aplicaciones usando solo JavaScript (tanto en el servidor como en el cliente).
 
-**Node.js es un entorno de ejecución de JavaScript del lado del servidor**. Esto significa que permite ejecutar código JavaScript fuera de un navegador web, por ejemplo en el servidor web o directamente en el terminal de nuestro pc.
-Esto lo convierte en un lenguaje de programación muy potente, permitiendo crear aplicaciones usando solo javascript (tanto en el servidor como en el cliente)
+Una vez instalado, lo ejecutamos desde el terminal con la instrucción:
 
-Una vez instalado lo ejecutamos desde el terminal con la instrucción "node"
+```bash
+node
+```
 
-Instalación de Node.js:  
+Instrucciones para la instalación de Node.js:  
 [https://nodejs.org/en/download](https://nodejs.org/en/download)
 
-> Al instalar Node.js también se instala automáticamente npm.
+> Al instalar Node.js también se instala automáticamente **npm** (del cual hablaremos más adelante).  
+> En macOS también se puede instalar con **brew**.
 
-> se puede instalar también con brew 
-
-La instrucción para saber la versión es: 
-
+Para saber la versión instalada:
 
 ```bash
 node -v
 ```
-(nos devolverá por ejemplo v20.7.0)
+(por ejemplo, `v20.7.0`)
 
-Una vez instalado podemos ejecutar un archivo en javascript de la siguiente manera 
+Para ejecutar un archivo JavaScript:
+
+```bash
+node ejemplo.js
+```
+
+El archivo `ejemplo.js` puede contener:
 
 ```js
-node ejemplo.js 
+console.log("Hola Mundo");
 ```
 
-El código en ejemplo.js puede ser para empezar 
+A diferencia del JavaScript de los navegadores, Node.js permite cargar módulos con funcionalidades avanzadas que normalmente no existen en el entorno del navegador.  
+Por ejemplo, el módulo `fs` permite trabajar con archivos (leer o escribir).
 
-```
-console.log("Hola Mundo")
-```
+Ejemplo para leer un archivo externo (`ejemplo.txt`) y mostrarlo en consola:
 
-A diferencia del JavaScript que usamos en los navegadores, Node.js permite cargar módulos con funcionalidades más avanzadas que normalmente no existen en el JavaScript del navegador.
-Por ejemplo, el módulo fs nos permite trabajar con archivos (leer o escribir).
-
-Ejemplo para leer un archivo externo (ejemplo.txt) y mostrarlo en consola:
-
-```
-//cargamos este módulo
+```js
+// Cargamos el módulo
 const fs = require('fs');
 
-// leer el archivo ejemplo.txt
+// Leer el archivo ejemplo.txt
 fs.readFile('ejemplo.txt', 'utf8', (err, data) => {
-    if (err) throw err;
-    console.log(data);
+  if (err) throw err;
+  console.log(data);
 });
 ```
 
-Hay que remarcar el carácter asíncrono de Node.js: las líneas de código no se ejecutan necesariamente en orden lineal; cuando hay una operación asíncrona (como leer un archivo) se espera su finalización antes de continuar.
+Es importante remarcar el carácter **asíncrono** de Node.js: las operaciones como leer un archivo no bloquean el programa, sino que se resuelven en segundo plano.
 
-Node.js se puede usar tanto en el frontend como en el backend.
-Para usarlo en el frontend normalmente necesitamos herramientas (bundlers) que "traduzcan" el código para que lo puedan entender todos los navegadores. Algunos de estos bundlers son Webpack, Vite, Parcel, etc.
+Node.js se puede usar tanto en **frontend** como en **backend**.  
+En frontend se suelen usar herramientas llamadas **bundlers** que “traducen” y “empaquetan” el código para que funcione en todos los navegadores (ej. Webpack, Vite, Parcel).
+
+---
 
 ## nvm y nvm-windows
 
-Existen herramientas para poder manejar varias versiones de node simultaneamente.
-Una de ellas es nvm:
+Existen herramientas para manejar varias versiones de Node.js simultáneamente. Una de ellas es **nvm**:
 
-````
-nvm install 16.14.0     # Instala versión específica
-nvm use 16.14.0        # Cambia a versión
-nvm list              # Muestra versiones instaladas
-````
-
-
-## El gestor de paquetes npm 
-
-
-Una de las grandes ventajas de node es el gestor de paquetes aportados la comunidad, npm (node package manager)
-Es una libreria inmensa (tiene más de 2 millones de paquetes) que no solo permite añadir esas funcionalidades sinó que también gestiona las dependencias (un paquete puede ser que dependa de otro, y se instalan todos automáticamente), nos permite gestionar las versiones y actualizaciones
-
-Recursos
-  - [Repositorio oficial npm](https://www.npmjs.com/)
-  - [Documentación oficial de npm](https://docs.npmjs.com/)
-  - [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
-
-Los paquetes instalados se pueden gestionar automáticamente en un archivo llamado package.json 
-Con este comando se crea este archivo
-
-```
-npm init 
+```bash
+nvm install 16.14.0   # Instala una versión específica
+nvm use 16.14.0       # Cambia a esa versión
+nvm list              # Muestra las versiones instaladas
 ```
 
-Para instalar un package
+---
 
-```
-npm install cowsay 
+## El gestor de paquetes npm
+
+Una de las grandes ventajas de Node.js es su gestor de paquetes: **npm** (*Node Package Manager*).  
+Es un repositorio inmenso (más de 2 millones de paquetes) que permite:
+
+- Añadir funcionalidades creadas por la comunidad.
+- Gestionar dependencias (un paquete puede depender de otros, que se instalan automáticamente).
+- Administrar versiones y actualizaciones.
+
+### Recursos
+- [Repositorio oficial npm](https://www.npmjs.com/)
+- [Documentación oficial de npm](https://docs.npmjs.com/)
+- [Guía de inicio rápido de npm](https://docs.npmjs.com/cli/v7/commands/npm)
+
+Los paquetes instalados se registran en un archivo llamado `package.json`.  
+Para crearlo:
+
+```bash
+npm init
 ```
 
-o
+### Ejemplo: instalar **cowsay**
 
-```
-npm i cowsay 
-```
-
-para instalar globalmente (si lo queremos usar en multiples proyectos)
-
-```
-npm i -g cowsay 
+```bash
+npm install cowsay
+# o
+npm i cowsay
 ```
 
-Los packages se copian localmente en la carpeta node_modules
-Si se instalan globalmente en una carpeta del sistema que podemos saber con este comando
+Instalación global (para usar en múltiples proyectos):
 
+```bash
+npm i -g cowsay
 ```
+
+Los paquetes locales se copian en la carpeta `node_modules`.  
+Los instalados globalmente se almacenan en una carpeta del sistema (que podemos consultar con):
+
+```bash
 npm root -g
 ```
 
+Para desinstalar:
 
-Para desinstalar 
-
-```
+```bash
 npm uninstall cowsay
 ```
 
-## 2 Maneras de cargar módulos 
+---
 
-En JavaScript (Node.js) existen dos maneras diferentes (e incompatibles) de cargar módulos:
+## Dos maneras de cargar módulos
 
-MJS (ES Modules) — Usando import y export
-Es la manera moderna.
-Requiere "type":"module" en package.json o la extensión .mjs.
+En JavaScript (Node.js) existen dos sistemas diferentes (e incompatibles) de carga de módulos:
 
-CJS (CommonJS) — Usando require() y module.exports
-Es la manera tradicional.
-Se asume este formato cuando la extensión es .cjs.
+- **MJS (ES Modules)** — Usando `import` y `export`.  
+  Es la manera moderna.  
+  Requiere `"type": "module"` en `package.json` o usar la extensión `.mjs`.
 
+- **CJS (CommonJS)** — Usando `require()` y `module.exports`.  
+  Es la manera tradicional.  
+  Se asume este formato cuando la extensión es `.cjs`.
 
-
-Para crear el archivo package.json 
-
-```
-npm init 
-```
+---
 
 ## Otros ejemplos con npm
 
-- Ejemplo con ascii art (dibuja con carácteres de texto)
-- Ejemplo con axios (busca en la wikipedia)
-- Ejemplo con chalk
-- Ejemplo cowsay
-- Ejemplo con pdf-lib
+- Ejemplo con **ascii art** (dibuja con caracteres de texto).
+- Ejemplo con **axios** (consulta la Wikipedia).
+- Ejemplo con **chalk**.
+- Ejemplo con **cowsay**.
+
+---
 
 ## Gestión de dependencias con npm
 
-- Entendiendo package.json
 
 - [Guía de package.json](https://docs.npmjs.com/cli/v7/configuring-npm/package-json)
 
->  Analizamos uno de los package.json de los ejemplos 
+> Analizamos un ejemplo real:  
+> `bloque_5/ejercicios_semana_1/ejemplos_packages/chalk/package.json`
 
+```json
+{
+  "name": "chalk",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo "Error: no test specified" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.6.0"
+  }
+}
+```
 
-### Dependencias 
+- `"type": "module"` indica que se usará sintaxis **ES6** (`import/export`).  
+- `"scripts"` permite ejecutar comandos desde el terminal.  
+- `"dependencies"` muestra las dependencias que se instalarán con `npm install`.
 
-Una dependencia quiere decir que muchos de los módulos dependen de otros (para no repetir código) de manera que cuando instalamos uno, automáticamente se instalarán también todos de los cuales depende.
+### Dependencias
 
-La ventaja de los packages también es que se van actualizando.
-Siempre que queramos actualizar las librerias simplemente haremos 
+Una dependencia es cuando un módulo necesita otros para funcionar.  
+Cuando instalamos uno, automáticamente se instalan también todos los que requiere.  
 
-``` js
+Actualizar librerías:
+
+```bash
 npm update
 ```
 
+---
 
-## npx 
+## npx
 
-Npx ejecuta paquetes de npm sin necesidad de instalarlos
-No todos los paquetes lo permiten
+**npx** permite ejecutar paquetes de npm sin necesidad de instalarlos (aunque no todos lo permiten).  
 
-Ejemplo (lo podemos ejecutar en cualquier ruta de nuestro pc)
+Ejemplo:
 
-```
+```bash
 npx cowsay "Hello, I'm a cow"
 ```
 
-Otro ejemplo que tenemos en este repositorio usa npx y una libreria para convertir los archivos md a formato pdf
-Lo podéis encontrar en el directorio "tools" de este repositorio
+Otro ejemplo en este repositorio: usar `npx` con una librería para convertir archivos `.md` a `.pdf` (ubicado en el directorio `tools`).
 
+---
 
 ## Vite - Servidor de desarrollo y empaquetador moderno
 
+Cuando desarrollamos para navegador con dependencias de npm, necesitamos un **bundler** que:
 
-Cuando desarrollamos para navegador y usamos dependencias de npm, necesitamos un bundler que:
+- Traduza código moderno a JS compatible con todos los navegadores.
+- Optimice, minifique y gestione dependencias.
+- Permita *hot reload* para ver cambios en tiempo real.
 
-- Traduzca código moderno a JS compatible con todos los navegadores
-- Optimice, minifique y gestione dependencias
-- Permita hot reload para ver cambios en tiempo real
+En este curso usaremos **Vite**, por ser rápido, moderno y sencillo.
 
-En este curso usaremos **Vite** por ser rápido, moderno y sencillo.
+### Crear un nuevo proyecto
 
-
-Para  crear un nuevo proyecto:
-
-```
+```bash
 npm create vite@latest
 ```
 
-Luego hay que elegir nombre, framework (por ejemplo, Vanilla, React, Vue...) y variante (JavaScript o TypeScript).
-De momento escogeremos siempre Vanilla y JavaScript
+Elegimos nombre, framework (Vanilla, React, Vue, etc.) y variante (JavaScript o TypeScript).  
+De momento: **Vanilla + JavaScript** siempre.
 
 Entrar en el proyecto e instalar dependencias:
 
+```bash
 cd nombre-proyecto
 npm install
-
-Scripts de desarrollo con Vite
-En package.json se crean scripts como estos:
-
 ```
+
+### Scripts de desarrollo con Vite
+
+En `package.json` se generan scripts como:
+
+```json
 {
   "scripts": {
-    "dev": "vite",         // Inicia servidor de desarrollo
-    "build": "vite build", // Empaqueta para producción
+    "dev": "vite",           // Inicia servidor de desarrollo
+    "build": "vite build",   // Empaqueta para producción
     "preview": "vite preview" // Previsualiza la build
   }
 }
 ```
 
-Ejecutar el servidor de desarrollo:
+Ejecutar servidor de desarrollo:
 
-```
+```bash
 npm run dev
 ```
-Esto levanta un servidor con recarga automática por ejemploe en http://localhost:5173.
 
-Ventajas de Vite
-- Rápido: usa esbuild para compilar y es casi instantáneo en desarrollo.
-- Hot Module Replacement: cambios visibles sin recargar toda la página.
-- Compatible con ES Modules: aprovecha la sintaxis moderna.
+Esto levanta un servidor con recarga automática en [http://localhost:5173](http://localhost:5173).
 
-Listo para producción: genera un /dist optimizado.
+### Ventajas de Vite
+- Rápido: usa **esbuild** y compila casi al instante.  
+- Hot Module Replacement: cambios visibles sin recargar toda la página.  
+- Compatible con **ES Modules**.  
+- Genera `/dist` optimizado para producción.
+
+---
 
 ## Ejercicios propuestos
 
+- Mejorar visualmente uno de los ejemplos de librerías npm para que funcione en el navegador usando Vite.  
+- Crear una mini aplicación que consulte una API (ej. TheDogAPI o TheCatAPI) y muestre datos con estilos.  
+- Usar una plantilla HTML/CSS de portfolio y leer datos desde un archivo JSON.  
 
-- Mejorar visualmente uno de los ejemplos de librerías npm para que funcione en el navegador usando Vite.
-- Crear una mini aplicación que consulte una API (ej. TheDogAPI o TheCatAPI) y muestre datos con estilos.
-- Usar una plantilla HTML/CSS de portfolio y leer datos desde un archivo JSON
+---
 
 ## Recursos
 
-Documentación oficial de Vite
-https://vite.dev/
-
-Npm cheat sheet 
-https://media.jfrog.com/wp-content/uploads/2021/08/23165237/JFrog_NPM_CheatSheet_V4.pdf
-
-Introducción a node y npm
-https://eloquentjavascript.net/20_node.html
-
-Curso de node.js desde cero, midulive
-https://www.youtube.com/watch?v=yB4n_K7dZV8
+- [Documentación oficial de Vite](https://vite.dev/)  
+- [Npm cheat sheet](https://media.jfrog.com/wp-content/uploads/2021/08/23165237/JFrog_NPM_CheatSheet_V4.pdf)  
+- [Introducción a Node y npm](https://eloquentjavascript.net/20_node.html)  
+- [Curso de Node.js desde cero (Midulive)](https://www.youtube.com/watch?v=yB4n_K7dZV8)  

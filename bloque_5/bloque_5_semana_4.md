@@ -1,168 +1,183 @@
 # Semana 4. Gestión y Despliegue de Aplicaciones Web: Netlify, Git y Métricas de Uso
 
-Índice 
+## Índice
+- [Gestión de servidores web](#gestión-de-servidores-web)
+- [Publicar usando Netlify](#publicar-usando-netlify)
+  - [Deploy manual](#deploy-manual)
+  - [Deploy a través de git](#deploy-a-través-de-git)
+- [Publicación usando GitHub Pages](#publicación-usando-github-pages)
+- [Despliegue continuo](#despliegue-continuo)
+- [Métricas de uso](#métricas-de-uso)
+  - [Métricas técnicas (de rendimiento)](#métricas-técnicas-de-rendimiento)
+  - [Métricas de experiencia de usuario (ux-metrics)](#métricas-de-experiencia-de-usuario-ux-metrics)
+- [Ejemplo de integración con Google Analytics](#ejemplo-de-integración-con-google-analytics)
+- [Ejercicios](#ejercicios)
 
-- Gestión de servidores web
-- Publicar usando Netlify 
-- Integración con git
-- Despliegue continuo
-- Métricas de uso
-
+---
 
 ## Gestión de servidores web
 
-Puede ser infraestructura física (on-premise) o en la nube (cloud computing)  
+Aunque para desarrollar podemos trabajar en nuestro ordenador de manera fácil y gratuita, para publicar una web necesitamos un servidor web (hosting).  
+Este puede ser infraestructura física (on-premise) o en la nube (cloud computing).  
 
-De más barato a más caro 
+De más barato a más caro, las opciones habituales son:
 
-- Hosting compartido 
-- Hosting VPS (Servidor privado virtual)
-- Hosting dedicado 
-- Hosting en la nube
+- Hosting compartido  
+- Hosting VPS (Servidor privado virtual)  
+- Hosting dedicado (en un servidor o servidores propios)  
 
-Sistemas operativos más común: Linux 
-Servidor web: Apache, Nginx,IIS
-Bases de datos: mysql
-Lenguajes de programación: php, node
+Como caso especial está el hosting en la nube, donde se paga por uso (pay as you go).  
 
-Servicios que pueden ofrecer las empresas de alojamiento web (hosting)
+**Sistemas más comunes:**
+- **Sistemas operativos:** Linux  
+- **Servidores web:** Apache, Nginx, IIS  
+- **Bases de datos:** MySQL, PostgreSQL, MongoDB, etc.  
+- **Lenguajes de programación:** PHP, Node.js, Python, etc.  
 
-- Backups automáticos
+**Servicios adicionales que suelen ofrecer las empresas de hosting:**
+- Backups automáticos  
 - Gestión de dominios  
-- Acceso por ftp/sftp/ssh  
-- Implementación de certificados SSL/TLS  
+- Acceso por FTP/SFTP/SSH  
+- Certificados SSL/TLS  
 - Control de accesos y autenticación  
 - Implementación de caché  
-- Análisis de registros (logs)
-- Estrategias de backup
-- Instalación de aplicaciones web y cms
+- Análisis de logs  
+- Instalación automática de aplicaciones web y CMS  
 
-Uso de CPanel y equivalentes
-Ver ejemplo
+Generalmente, al contratar un hosting, se proporciona una interfaz de administración (como **cPanel**) para gestionar la web.  
 
-Algunas opciones gratuitas 
+Existen también opciones de alojamiento gratuito (con limitaciones):  
+- [Vercel](https://vercel.com/)  
+- [Railway](https://railway.com/)  
+- [Netlify](https://www.netlify.com/)  
 
-https://www.heroku.com/  
-https://vercel.com/  
-https://railway.com/
-https://www.netlify.com/
-
+---
 
 ## Publicar usando Netlify 
 
+Nosotros utilizaremos **Netlify**: [https://www.netlify.com/](https://www.netlify.com/)
 
-Como publicar en netlify 
-https://www.netlify.com/
+Existen dos formas principales de publicar una web en Netlify:  
+- Deploy manual  
+- Deploy a través de Git  
 
 ### Deploy manual
-Simplemente subimos una carpeta con todos los archivos. Es importante que el principal se llame index.html. Netlify publicará la web en una dirección provisional del tipo https://spiffy-concha-5999a1.netlify.app/
 
-Luego podemos asignar un dominio real en lugar del provisional.
+Se sube una carpeta con todos los archivos. Es importante que el archivo principal se llame `index.html`.  
+Netlify publicará la web en una dirección provisional, por ejemplo:  
+`https://spiffy-concha-5999a1.netlify.app/`  
+
+Luego podemos asignar un dominio propio en lugar del provisional.  
 
 ### Deploy a través de git
 
-Un ejemplo de pasos a seguir
-- Crear un repositorio en github
-- Descargar el repositorio y crear la aplicación web 
-- En netlify crear un nuevo proyecto "add new site" importando desde github 
-https://app.netlify.com/start
-En este momento nos pedirá autenticarnos y podremos ver todos los proyectos que tenemos en github
-- Configuramos si queremos alguna de las opciones y ya podemos hacer deploy
-- La ventaja ahora es que simplemente haciendo push en nuestro entorno local se publicará automáticamente la web en la dirección pública.
+Ejemplo de pasos a seguir:
+1. Crear un repositorio en GitHub (o usar uno existente).  
+2. Descargar el repositorio y crear la aplicación web.  
+3. En Netlify, crear un nuevo proyecto **“Add new site”** importando desde GitHub:  
+   [https://app.netlify.com/start](https://app.netlify.com/start)  
+   (En este paso pedirá autenticación para acceder a los repositorios).  
+4. Configurar las opciones y hacer deploy.  
+5. A partir de aquí, cada **push** en el repositorio actualizará automáticamente la web publicada.  
 
+---
 
-## Publicación usando github
+## Publicación usando GitHub Pages
 
-Git pages 
-Solo está pensado para páginas html estáticas
-El repositorio debe ser público
-Se puede asignar a un dominio
-GitHub Pages soporta Jekyll, un generador de sitios estáticos
-Puedes usar Markdown (.md) o HTML (.html)
+GitHub incorpora un servicio gratuito llamado **GitHub Pages**:
 
-Documentación de GitHub Pages
-https://docs.github.com/en/pages
+- Solo permite páginas estáticas en HTML.  
+- El repositorio debe ser público.  
+- Se puede asignar un dominio propio.  
+- Soporta **Jekyll**, un generador de sitios estáticos.  
+- Acepta ficheros Markdown (.md) y HTML (.html).  
 
+📖 Documentación: [GitHub Pages](https://docs.github.com/en/pages)  
+
+---
 
 ## Despliegue continuo
 
-Esta metodologia está pensado para funcionar junto con metodologias ágiles
+El **despliegue continuo** se integra con metodologías ágiles y es ampliamente usado en el desarrollo de software.  
 
-- Método de trabajo flexible sin un calendario preestablecido
-- Divide proyectos en partes pequeñas
-- Permite cambios rápidos
-- Enfocado en satisfacer al cliente
+**Características:**
+- Método flexible, sin calendario rígido.  
+- Divide proyectos en partes pequeñas.  
+- Permite cambios rápidos.  
+- Enfocado en satisfacer al cliente.  
 
+**Beneficios del despliegue continuo:**
+- Automatización de lanzamientos.  
+- Tests automáticos del código.  
+- Actualización directa si todo funciona correctamente.  
+- Reducción de errores humanos.  
+- Entrega rápida de mejoras.  
 
-El despliegue Continuo consiste en
+Permite subir cambios de forma inmediata y segura, fomentando la mejora constante, la flexibilidad y el enfoque en resultados.  
 
-- Automatización de lanzamiento de software
-- Tests automáticos del código
-- Actualización directa cuando todo funciona
-- Reduce errores humanos
-- Acelera la entrega de mejoras
-
-Permite subir cambios a la web de forma inmediata y segura
-
-Ambos se basan en la mejora constante, la flexibilidad y que están centrados en los resultados
+---
 
 ## Métricas de uso
 
-Existen básicamente 2 métricos de uso en una web, las técnicas (de rendimiento) y las de experiencia de usuario (visitas)
+Existen dos tipos principales de métricas en una web:  
+- **Técnicas (rendimiento)**  
+- **De experiencia de usuario (visitas)**  
 
-### Métricas técnicas (de Rendimiento)
+### Métricas técnicas (de rendimiento)
 
-- Tiempo que tarda el contenido principal en mostrarse, Largest Contentful Paint (LCP)
-- Retraso en la respuesta tras la primera interacción del usuario, First Input Delay (FID)
-- Tiempo de renderizado
+Algunas métricas clave:  
+- **LCP (Largest Contentful Paint):** tiempo en que se muestra el contenido principal.  
+- **FID (First Input Delay):** retraso tras la primera interacción del usuario.  
+- Tiempo de renderizado.  
 
-Podemos usar 
+**Herramientas útiles:**  
+- Chrome DevTools  
+- Google Lighthouse  
+- PageSpeed Insights  
 
-- El inspector del navegador nos da muchas información (Chrome DevTools)
-- Google Lighthouse
-- PageSpeed Insights
+### Métricas de experiencia de usuario (UX Metrics)
 
-###  Métricas de Experiencia de Usuario (UX Metrics)
+Entre las métricas más comunes:  
+- Tasa de conversión  
+- **Bounce Rate (Tasa de rebote):** porcentaje de usuarios que abandonan sin interactuar  
+- Accesibilidad  
 
-- Tasa de conversión y rebote (Porcentaje de usuarios que completan una acción clave)
-- Bounce Rate (Tasa de rebote): Porcentaje de usuarios que abandonan la página sin interactuar
-- Accesibilidad 
+**Herramientas de medición:**  
+- Google Analytics  
+- Firebase Analytics  
+- Mapas de calor y grabaciones de usuarios  
 
+---
 
-Herramientas de Medición
+## Ejemplo de integración con Google Analytics 
 
-- Google Analytics
-- Firebase Analytics
-- Mapas de calor y grabaciones de usuarios
+Pasos principales:  
+1. Crear una cuenta en [Google Analytics](https://analytics.google.com/).  
+2. Crear una propiedad con zona horaria, moneda y estadísticas.  
+3. Seleccionar **Web** como plataforma.  
+4. Copiar el código de seguimiento proporcionado.  
 
-## Ejemplo de integración con google analytics 
+Ejemplo (donde `XXX` es el código de seguimiento):  
 
-- Crear una cuenta en google analytics 
-- Usando una cuenta de google entrar en https://analytics.google.com/ y crear una cuenta 
-- Después de crear la cuenta crear una propiedad
-- Asignarle una zona horaria, moneda, estáticas 
-- Seleccionar web como plataforma 
-- Copiar el código siguiendo las instrucciones 
-
-El código será de este estilo, donde XXX és el codigo de seguimiento
-
-```
+```html
 <script async src="https://www.googletagmanager.com/gtag/js?id=XXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'XXX');
 </script>
 ```
 
-Después de activarlo podemos comprobar que se están capturando los datos
+Una vez activado, se pueden comprobar los datos en tiempo real en el panel de Google Analytics.  
+
+---
 
 ## Ejercicios
 
-Como ejercicio para esta parte del temario se sugiere añadir analítica web al ejemplo de la práctica anterior (vuejs) y publicarlo utilizando netlify. 
-Se debe entregar un documento especificando la url de la web y una captura de pantalla del panel de google analytics mostrando información en tiempo real del sitio durante una visita.
-
-
-
+Como práctica, se propone:  
+- Añadir analítica web al proyecto anterior (portfolio con Vue.js).  
+- Publicarlo en **Netlify**.  
+- Entregar un documento con:  
+  - La **URL de la web publicada**.  
+  - Una **captura de pantalla** del panel de Google Analytics mostrando la información en tiempo real durante una visita.  
