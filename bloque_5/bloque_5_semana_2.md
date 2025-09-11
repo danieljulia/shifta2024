@@ -12,7 +12,7 @@
 - [Curso de Vue 2](#curso-de-vue-2-la-mayoria-de-conceptos-sirven-para-vue-3-que-es-la-versión-actual)
 - [Vue.js vs React](#vuejs-vs-react)
 - [Referencias](#referencias)
-- [Ejercicio propuesto con Vue](#ejercicio-propuesto-con-vue)
+- [Tarea propuesta con Vue](#tarea-propuesta-con-vue)
 
 ## Ventajas de los frameworks respecto a JavaScript puro
 
@@ -139,6 +139,10 @@ Renderizado del Lado del Servidor:
 Introducción y documentación oficial de Vue:  
 <https://vuejs.org/guide/introduction.html>
 
-## Ejercicio propuesto con Vue
+## Tarea propuesta con Vue
 
-Crear un prototipo de una página implementando alguna parte "reactiva" de vuestro trabajo final.
+Crear un portfolio básico utilizando vue.js.
+La aplicación debe tener las siguientes funcionalidades:
+- Leer archivo json con los datos (como mínimo nombre proyecto, descripción e imagen)
+- En la página de inicio se muestra un listado de todos los proyectos, cada uno de ellos con un enlace que te lleva a ver los detalles de un proyecto
+- Página única de cada proyecto con más información

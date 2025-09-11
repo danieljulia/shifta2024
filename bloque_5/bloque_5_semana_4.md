@@ -11,7 +11,7 @@
   - [Métricas técnicas (de rendimiento)](#métricas-técnicas-de-rendimiento)
   - [Métricas de experiencia de usuario (ux-metrics)](#métricas-de-experiencia-de-usuario-ux-metrics)
 - [Ejemplo de integración con Google Analytics](#ejemplo-de-integración-con-google-analytics)
-- [Ejercicios](#ejercicios)
+- [Tarea](#tarea)
 
 ---
 
@@ -173,7 +173,7 @@ Una vez activado, se pueden comprobar los datos en tiempo real en el panel de Go
 
 ---
 
-## Ejercicios
+## Tarea
 
 Como práctica, se propone:  
 - Añadir analítica web al proyecto anterior (portfolio con Vue.js).  

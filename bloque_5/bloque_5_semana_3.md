@@ -13,7 +13,7 @@
 - [Backend de escritura](#backend-de-escritura)
 - [Firebase storage para almacenar archivos](#firebase-storage-para-almacenar-archivos)
 - [Otros aspectos de firebase](#otros-aspectos-de-firebase)
-- [Ejercicio](#ejercicio)
+- [Tarea](#ejercicio)
 
 ## Introducción a las SPA
 
@@ -238,9 +238,9 @@ Como almacenar archivos y conceptos más avanzados
 - Permite gestionar la autenticación
 - Permite acceso a estadísticas de uso
 
-## Ejercicio
+## Tarea
 
-A partir de nuestra maquetación del portfolio crear una SPA de manera que además de la página de inicio tenga la página única de cada proyecto y una pàgina de contacto.
+A partir de nuestra maquetación del portfolio crear una SPA/PWA de manera que además de la página de inicio tenga la página única de cada proyecto y una pàgina de contacto.
 Vincularlo con la base de datos en mockapi (u otro sistema equivalente) de manera que podamos editar los proyectos ahi. 
 Convertirla en PWA creando un manifest.json.
 Más en concreto debe tener las siguientes funcionalidades:

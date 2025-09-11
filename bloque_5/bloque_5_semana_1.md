@@ -1,4 +1,4 @@
-# Bloque 5. Semana 1. Desarrollo FrontEnd con Node.js, npm y Parcel
+# Bloque 5. Semana 1. Desarrollo FrontEnd con Node.js, npm y Vite
 
 ## Índice
 - [Node.js](#nodejs)
@@ -9,8 +9,8 @@
 - [Gestión de dependencias con npm](#gestión-de-dependencias-con-npm)
 - [npx](#npx)
 - [Vite - Servidor de desarrollo y empaquetador moderno](#vite---servidor-de-desarrollo-y-empaquetador-moderno)
-- [Ejercicios propuestos](#ejercicios-propuestos)
 - [Recursos](#recursos)
+- [Tarea de la semana](#tarea-de-la-semana)
 
 ---
 
@@ -219,7 +219,7 @@ Otro ejemplo en este repositorio: usar `npx` con una librería para convertir ar
 
 Cuando desarrollamos para navegador con dependencias de npm, necesitamos un **bundler** que:
 
-- Traduza código moderno a JS compatible con todos los navegadores.
+- Traduzca código moderno a JS compatible con todos los navegadores.
 - Optimice, minifique y gestione dependencias.
 - Permita *hot reload* para ver cambios en tiempo real.
 
@@ -271,17 +271,19 @@ Esto levanta un servidor con recarga automática en [http://localhost:5173](http
 
 ---
 
-## Ejercicios propuestos
-
-- Mejorar visualmente uno de los ejemplos de librerías npm para que funcione en el navegador usando Vite.  
-- Crear una mini aplicación que consulte una API (ej. TheDogAPI o TheCatAPI) y muestre datos con estilos.  
-- Usar una plantilla HTML/CSS de portfolio y leer datos desde un archivo JSON.  
-
----
-
 ## Recursos
 
 - [Documentación oficial de Vite](https://vite.dev/)  
 - [Npm cheat sheet](https://media.jfrog.com/wp-content/uploads/2021/08/23165237/JFrog_NPM_CheatSheet_V4.pdf)  
 - [Introducción a Node y npm](https://eloquentjavascript.net/20_node.html)  
 - [Curso de Node.js desde cero (Midulive)](https://www.youtube.com/watch?v=yB4n_K7dZV8)  
+
+---
+
+## Tarea de la semana
+
+Escoger alguna de estas 3 opciones y entregarlo en el aula
+
+- Mejorar visualmente uno de los ejemplos de librerías npm para que funcione en el navegador usando Vite.  
+- Crear una mini aplicación que consulte una API (ej. TheDogAPI o TheCatAPI) y muestre datos con estilos.  
+- Usar una plantilla HTML/CSS de portfolio y leer datos desde un archivo JSON.  
